@@ -21,10 +21,12 @@ nav#navbar .navbar-brand {
   font-weight: bold;
   font-size: 25px;
   text-transform: capitalize;
+  transition: 0.3s;
 }
 nav#navbar .navbar-nav .nav-link {
   color: #1d5078;
   font-weight: bold;
+  transition: 0.3s;
 }
 nav#navbar .navbar-nav .nav-link.active {
   border-bottom: 2px solid #bda02d;
@@ -51,11 +53,6 @@ nav#navbar button.dropdown-item:active {
   background: #1d5078;
 }
 
-@media screen and (min-width: 768px) {
-  #navbar .navbar-brand {
-    font-size: 33px;
-  }
-}
 @media screen and (min-width: 1450px) {
   nav#navbar {
     padding: 25px 300px 30px !important;
@@ -64,18 +61,26 @@ nav#navbar button.dropdown-item:active {
     padding: 5px 350px 5px !important;
   }
 }
+@media screen and (max-width: 1140px) {
+  nav#navbar {
+    padding: 25px 4% 30px !important;
+  }
+  nav#navbar.isScrollDown {
+    padding: 5px 5% 5px !important;
+  }
+}
+@media screen and (max-width: 835px) {
+  nav#navbar {
+    font-size: smaller;
+  }
+  nav#navbar .navbar-brand {
+    font-size: 20px;
+  }
+}
 @media screen and (max-width: 767px) {
   nav#navbar {
     background-color: #000 !important;
     box-shadow: 0 1px 10px #bda02d;
-  }
-}
-@media screen and (max-width: 1040px) {
-  nav#navbar {
-    padding: 25px 10% 30px !important;
-  }
-  nav#navbar.isScrollDown {
-    padding: 5px 11% 5px !important;
   }
 }
 #root-content {
