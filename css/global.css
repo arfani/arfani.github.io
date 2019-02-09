@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +10,45 @@ body {
   background-size: cover;
   height: 100%;
   overflow-y: scroll;
+}
+body #counters {
+  position: fixed;
+  right: -133px;
+  top: 40%;
+  background: rgba(28, 80, 122, 0.3);
+  padding: 5px;
+  text-align: right;
+  border-radius: 5px 0px 0px 5px;
+  transition: 0.5s right;
+}
+body #counters #viewCounter:before {
+  content: "Seen ";
+  font-weight: bold;
+  color: #fff;
+}
+body #counters #visitorCounter:before {
+  content: "Visitors ";
+  font-weight: bold;
+  color: #fff;
+}
+body #counters:before {
+  content: "⚙";
+  position: absolute;
+  left: -10px;
+  font-size: larger;
+  transition: 5.5s transform;
+}
+body #counters:hover {
+  right: 0;
+  z-index: 1;
+}
+body #counters:hover:before {
+  left: -25px;
+  -ms-transform: rotate(360deg);
+  /* IE 9 */
+  -webkit-transform: rotate(360deg);
+  /* Safari */
+  transform: rotate(360deg);
 }
 
 nav#navbar {
