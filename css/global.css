@@ -13,7 +13,7 @@ body {
 }
 body #counters {
   position: fixed;
-  right: -133px;
+  right: -192px;
   top: 40%;
   background: rgba(28, 80, 122, 0.3);
   padding: 5px;
@@ -34,7 +34,7 @@ body #counters #visitorCounter:before {
 body #counters:before {
   content: "⚙";
   position: absolute;
-  left: -10px;
+  left: -25px;
   font-size: larger;
   transition: 5.5s transform;
 }
