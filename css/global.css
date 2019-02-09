@@ -13,7 +13,7 @@ body {
 }
 body #counters {
   position: fixed;
-  right: -192px;
+  right: -152px;
   top: 40%;
   background: rgba(28, 80, 122, 0.3);
   padding: 5px;
@@ -23,11 +23,6 @@ body #counters {
 }
 body #counters #viewCounter:before {
   content: "Seen ";
-  font-weight: bold;
-  color: #fff;
-}
-body #counters #visitorCounter:before {
-  content: "Visitors ";
   font-weight: bold;
   color: #fff;
 }
