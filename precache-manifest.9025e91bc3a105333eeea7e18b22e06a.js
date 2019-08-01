@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/RankingForki.74ebe77a.png"
   },
   {
-    "revision": "10ba26ea31997c308f1c",
+    "revision": "ce6cda43d5d618ac82f2",
     "url": "/static/css/main.294dc7bf.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/static/media/LoginHotspot.13d19217.gif"
   },
   {
-    "revision": "10ba26ea31997c308f1c",
-    "url": "/static/js/main.10ba26ea.chunk.js"
+    "revision": "ce6cda43d5d618ac82f2",
+    "url": "/static/js/main.ce6cda43.chunk.js"
   },
   {
     "revision": "a5fb21a8666b4d1b7a6b6aba5ab4d033",
@@ -60,19 +60,19 @@ self.__precacheManifest = [
     "url": "/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/static/media/fontawesome-webfont.674f50d2.eot"
-  },
-  {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "/static/media/fontawesome-webfont.b06871f2.ttf"
+  },
+  {
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
     "revision": "8eab19453deb9fbf5723",
     "url": "/static/css/1.38d037a6.chunk.css"
   },
   {
-    "revision": "ac7ccba6107c3bc8589f3dea80d4eafd",
+    "revision": "99b1ae51ad604f52ad8d378f4cb62aad",
     "url": "/index.html"
   }
 ];
