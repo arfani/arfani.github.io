@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "45a4ec72d6277eba7dd0af19d4bf1b2b",
+    "revision": "6d24aef5168b518d42ba4c60352dc74f",
     "url": "/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/3.33e0c98c.chunk.css"
   },
   {
-    "revision": "4aa406663e3d2fe116dd",
-    "url": "/static/css/main.b210ece8.chunk.css"
+    "revision": "0e58a2f5d6c7d78dd20b",
+    "url": "/static/css/main.9e099428.chunk.css"
   },
   {
-    "revision": "fad791d8c6e834c1a9a0",
-    "url": "/static/js/2.cd2e6c05.chunk.js"
+    "revision": "c57349e06a0fea0aa228",
+    "url": "/static/js/2.097174e9.chunk.js"
   },
   {
-    "revision": "568b16d71d9be886d364f378b9ae891f",
-    "url": "/static/js/2.cd2e6c05.chunk.js.LICENSE.txt"
+    "revision": "9ef880d241c4e919f2fe1fde8fb7edef",
+    "url": "/static/js/2.097174e9.chunk.js.LICENSE.txt"
   },
   {
     "revision": "37b2106b83e7c298bf20",
@@ -28,16 +28,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/3.41491f1d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "79e14e93f9da0b3888d8",
-    "url": "/static/js/4.fbfcb927.chunk.js"
+    "revision": "56e578557512ec55c281",
+    "url": "/static/js/4.ca88e61d.chunk.js"
   },
   {
-    "revision": "4aa406663e3d2fe116dd",
-    "url": "/static/js/main.3f27eaf4.chunk.js"
+    "revision": "0e58a2f5d6c7d78dd20b",
+    "url": "/static/js/main.34c6d1c0.chunk.js"
   },
   {
-    "revision": "836f2c1a9d87f2e00342",
-    "url": "/static/js/runtime-main.c7103d6b.js"
+    "revision": "579bee2ad8cbc6148720",
+    "url": "/static/js/runtime-main.92e76357.js"
+  },
+  {
+    "revision": "8d49bd5893c3834816fe345629cca0ad",
+    "url": "/static/media/arfan.8d49bd58.jpeg"
   },
   {
     "revision": "674f50d287a8c48dc19ba404d20fe713",
@@ -58,9 +62,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
     "url": "/static/media/fontawesome-webfont.fee66e71.woff"
-  },
-  {
-    "revision": "f5a3d35439cf4fec8b9e0df7e25e0f2e",
-    "url": "/static/media/pp.f5a3d354.png"
   }
 ]);
