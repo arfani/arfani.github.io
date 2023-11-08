@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b5c0e7a4c21064e59110f202a5088c92",
+    "revision": "fcc8e9892bbe66aa46bb9086906db455",
     "url": "/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/3.3fa45825.chunk.css"
   },
   {
-    "revision": "6125f5f2b3c802bf932c",
+    "revision": "b41fa4136f7666c46962",
     "url": "/static/css/main.641fe555.chunk.css"
   },
   {
-    "revision": "76623f2d3d04c75fe65f",
-    "url": "/static/js/2.354f80f2.chunk.js"
+    "revision": "b98af4819713d0f827d4",
+    "url": "/static/js/2.28b16363.chunk.js"
   },
   {
     "revision": "b42d7085295120a880838772fdd35c0e",
-    "url": "/static/js/2.354f80f2.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.28b16363.chunk.js.LICENSE.txt"
   },
   {
     "revision": "a1f773dee69216e21408",
@@ -28,16 +28,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/3.5ac3ef5f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7d3ee08cf5a1477af5bb",
-    "url": "/static/js/4.89902bea.chunk.js"
+    "revision": "96b595c3cf9c92a6e0fb",
+    "url": "/static/js/4.db8e185f.chunk.js"
   },
   {
-    "revision": "6125f5f2b3c802bf932c",
-    "url": "/static/js/main.f0e985d5.chunk.js"
+    "revision": "b41fa4136f7666c46962",
+    "url": "/static/js/main.9cee89f4.chunk.js"
   },
   {
-    "revision": "6ddc785da5a7bfcb4db8",
-    "url": "/static/js/runtime-main.93b09317.js"
+    "revision": "fff99409b1d9341b2259",
+    "url": "/static/js/runtime-main.992b58c3.js"
   },
   {
     "revision": "d8ed6f9bb0230ad9a622ae34c2d089b1",
@@ -80,10 +80,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Sertifikat_Digital_Marketing_Kemnaker_page-0001.3777c0ac.webp"
   },
   {
-    "revision": "a00affb349dca5a6a3126f59d13e065d",
-    "url": "/static/media/Sertifikat_Digital_Marketing_Kemnaker_page-0002.a00affb3.webp"
-  },
-  {
     "revision": "cf2d7b02d89007330b1af12e3889ae01",
     "url": "/static/media/arfan.cf2d7b02.webp"
   },
@@ -108,36 +104,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
+    "revision": "b9dd25f751eaa163e7c18407f2e85154",
+    "url": "/static/media/idcamp-alumni-dialogue-1-unlocking-your-potential-personal-development-in-tech-certificate_page-0001.b9dd25f7.webp"
+  },
+  {
     "revision": "3fc378ea87009291f630a98f0d53cd06",
     "url": "/static/media/sertifikat-MUHAMMAD ARFANI HIDAYAT_Digital Marketing In Action_page-0001.3fc378ea.webp"
+  },
+  {
+    "revision": "b87aaa5b95f80a940943e5f287716d94",
+    "url": "/static/media/sertifikat_dicoding_AWS_Cloud-dasar_page-0001.b87aaa5b.jpg"
+  },
+  {
+    "revision": "80a7c88eef32daa4d1745470bc2f8209",
+    "url": "/static/media/sertifikat_dicoding_BEPemula_page-0001.80a7c88e.jpg"
   },
   {
     "revision": "8c89ab5f6ef4c94129ef430c1a8bed1d",
     "url": "/static/media/sertifikat_frontend_pemula_page-0001.8c89ab5f.webp"
   },
   {
-    "revision": "5581d65f1055a89a177cdfb002a670bf",
-    "url": "/static/media/sertifikat_frontend_pemula_page-0002.5581d65f.webp"
-  },
-  {
     "revision": "b1b85d653ef3ea72af56100b42b08008",
     "url": "/static/media/sertifikat_js_dasar_page-0001.b1b85d65.webp"
   },
   {
-    "revision": "f1b4620678b5544b238be36b8f95c727",
-    "url": "/static/media/sertifikat_js_dasar_page-0002.f1b46206.webp"
-  },
-  {
-    "revision": "4bc0577e5fd0fb9ab3330ff0cd4b7a67",
-    "url": "/static/media/sertifikat_js_dasar_page-0003.4bc0577e.webp"
-  },
-  {
     "revision": "f137f9a77343035dc543a61feaa65478",
     "url": "/static/media/sertifikat_pemrograman_SOLID_page-0001.f137f9a7.webp"
-  },
-  {
-    "revision": "96db4e83ed16f3100cb5a3332b92eee1",
-    "url": "/static/media/sertifikat_pemrograman_SOLID_page-0002.96db4e83.webp"
   },
   {
     "revision": "d77807e51c27da2ff86ff3149becf4ec",
@@ -150,13 +142,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "df16490d8de4b8ba22762777e72e8704",
     "url": "/static/media/sertifikat_web_dasar_page-0001.df16490d.webp"
-  },
-  {
-    "revision": "62a8542c4d08598a4b47fcbea215c35f",
-    "url": "/static/media/sertifikat_web_dasar_page-0002.62a8542c.webp"
-  },
-  {
-    "revision": "2aad284ffafd17cf2eee05d380b55b80",
-    "url": "/static/media/sertifikat_web_dasar_page-0003.2aad284f.webp"
   }
 ]);
