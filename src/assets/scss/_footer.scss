@@ -1,0 +1,15 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1; //make footer under the box el
+}
+
+.copyright {
+  text-align: center;
+  // color: rgb(28, 80, 122, 0.6);
+  color: $rColor;
+  padding: 5px;
+  font-weight: bold;
+}

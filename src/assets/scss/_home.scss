@@ -1,0 +1,113 @@
+$padd: 20px; //padding between photo and name.
+
+#home {
+  .header {
+    // background: url("../images/bg-head.png") no-repeat scroll center center;
+    // background-size: cover;
+    // padding: 20px;
+    border-radius: 5px 5px 0 0;
+    background-color: #343a40dd;
+    
+    .row {
+      margin: 0;
+    }
+
+    #photo {
+      margin: auto;
+      padding: $padd;
+      height: 310px;
+
+      img {
+        border-radius: 50%;
+        background: $myYellow;
+        transition: 0.3s;
+        box-shadow: 1px 2px 5px $myYellow;
+      }
+    }
+
+    #id1 {
+      margin: auto;
+      padding: $padd;
+      text-transform: capitalize;
+
+      #name {
+        color: $nColor;
+        font-weight: bold;
+        text-shadow: 0 0 10px $myBlue;
+      }
+
+      .prof {
+        color: $rColor;
+        display: inline;
+        padding-bottom: 40px;
+        text-shadow: 0 0 10px $myYellow;
+      }
+
+      #links span {
+        font-size: 32px;
+        margin: 15px 10px 0 10px;
+        color: $rColor;
+      }
+    } //.identity
+  } //.header
+
+  .content {
+    background: #f8f9fa;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+
+    .sayHi a {
+      color: #000;
+    }
+    .btn-wa {
+      font-weight: bold;
+      transition: 1s;
+      .fa.fa-whatsapp {
+        color: #18d260;
+        font-weight: bold;
+        font-size: 34px;
+      }
+      .label-wa {
+        color: #fff;
+        text-shadow: #fff;
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        transition: 0.2s;
+        transition-delay: 0.5s;
+      }
+    }
+
+    .btn-wa:hover {
+      background: #18d260;
+      border-radius: 10px 0;
+      width: 120px;
+      .fa.fa-whatsapp {
+        color: #fff;
+      }
+      .label-wa {
+        width: 95px;
+        height: 22px;
+      }
+    }
+
+    #id2 ul li {
+      list-style-type: none;
+      line-height: 2em;
+
+      .label {
+        display: inline-block;
+        min-width: 105px;
+      }
+
+      .value {
+        color: gray;
+      }
+
+      .value::before {
+        content: ": ";
+      }
+    }
+  } //.content
+} //#home

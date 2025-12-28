@@ -1,0 +1,55 @@
+#portfolios {
+  .header {
+    // background: url("../images/bg-head.png") no-repeat scroll center center;
+    // background-size: cover;
+    padding: 30px;
+    border-radius: 5px 5px 0 0;
+    background-color: #343a40;
+
+    h1 {
+      text-shadow: 0 0 10px $myBlue;
+      color: $rColor;
+      font-weight: bold;
+    }
+  } //.header
+
+  .content {
+    background: #f8f9fa;
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+
+    .menu-category button {
+      color: $myYellow;
+    }
+
+    .card {
+      %frame {
+        width: 100%;
+        opacity: 0;
+        -webkit-transition: opacity 2s ease-out;
+        transition: opacity 1s ease;
+      }
+
+      a:hover {
+        text-decoration:none;
+      }
+
+      .demo, .tech, .download {
+        background-color: $myBlue;
+        @extend %frame;
+        div {
+          color: $nColor;
+        }
+      }
+
+      .demo:hover, .tech:hover, .download:hover {
+        opacity: 1;
+        font-weight: bold;
+      }
+
+      .card-header h6 {
+        margin: auto;
+      }
+    }
+  }
+} //pf end

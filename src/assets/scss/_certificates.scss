@@ -1,0 +1,96 @@
+#certificates {
+    .header {
+        // background: url("../images/bg-head.png") no-repeat scroll center center;
+        // background-size: cover;
+        padding: 30px;
+        border-radius: 5px 5px 0 0;
+        background-color: #343a40;
+
+        h1 {
+            text-shadow: 0 0 10px $myBlue;
+            color: $rColor;
+            font-weight: bold;
+        }
+    }
+
+    //.header
+
+    .content {
+        background: #f8f9fa;
+        border-radius: 0 0 5px 5px;
+        padding: 20px;
+        
+        .block-title {
+            text-align: left;
+            padding: 15px;
+
+            h3 {
+                font-weight: bold;
+            }
+        }
+
+        .service-block {
+            margin-bottom: 15px;
+
+            .service-info {
+                text-align: center;
+                text-align: -webkit-center;
+            }
+
+            .service-image {
+                font-size: 80px;
+                background: #f5f5f5;
+                border-radius: 50%;
+                margin-bottom: 10px;
+                width: 120px;
+                height: 120px;
+                transition: 0.3s;
+                position: relative;
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+
+                    &:hover { 
+                        text-decoration: none; // remove blue color when hover icon
+                    }
+                }
+
+                span {
+                    color: $myYellow;
+                }
+
+                .x-fb {
+                    color: red;
+                    position: absolute;
+                    right: 39px;
+                }
+            }
+
+            .service-image:hover {
+                background: $rColor;
+
+                span {
+                    color: $myYellow;
+                }
+            }
+
+            h5 {
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            // to disable service defined by class id
+            // &.id5 {
+            //     opacity: 0.6;
+            // }
+        }
+    }
+}
+
+//services

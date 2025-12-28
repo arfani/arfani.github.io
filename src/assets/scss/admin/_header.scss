@@ -1,0 +1,16 @@
+#profile-bar {
+  text-align: center;
+  > img {
+    background: $myBlueL;
+  }
+}
+
+nav {
+  .navbar-collapse.show {
+    padding-top: 5px;
+  }
+  &.navbar > button.btn-toggle {
+    background: $myBlue;
+    border-color: $myBlue;
+  }
+}

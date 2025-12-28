@@ -1,0 +1,52 @@
+@import "resetter";
+@import "variables";
+
+body {
+  font-family: Grandstander;
+  background-image: linear-gradient(to top right, $myBlue, $nColor, $rColor)
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right:0;
+  left:0;
+  background-color: $nColor;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#box {
+  max-width: 1032px;
+  margin: 0 auto;
+  margin-top: 102px; //comment this if navbar position setted to relative
+  margin-bottom: 40px;
+  text-align: center;
+  min-height: calc(100vh - 140px);
+
+  #not-found {
+    background-color: $rColor;
+    padding: 10px;
+    font-weight: bold;
+    color: $nColor;
+    text-shadow: 2px 1px 5px $myYellow, 2px 2px 5px #000;
+    box-shadow: 1px 2px 10px $myBlue;
+    margin-top: 40px;
+  }
+}
+
+@import "navbar";
+@import "home";
+@import "exp";
+@import "services";
+@import "certificates";
+// @import "portfolios";
+@import "about";
+@import "footer";
+@import "login";
+@import "admin/sidebar";
+@import "admin/content";
+@import "admin/header";

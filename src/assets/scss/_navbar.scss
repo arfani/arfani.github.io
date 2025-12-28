@@ -1,0 +1,100 @@
+nav#navbar {
+  padding: 25px 15% 30px !important;
+  background-color: transparent !important;
+  transition: 0.9s;
+
+  .navbar-brand {
+    color: $myBlue;
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: capitalize;
+    transition: 0.3s;
+  }
+
+  .navbar-nav .nav-link {
+    color: $myBlue;
+    font-weight: bold;
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+    transition: border 0.5s;
+  }
+
+  .navbar-nav .nav-link.active {
+    border-color: $myYellow;
+  }
+
+  .navbar-nav .nav-link:hover:last-child:not(.active) {
+    border-bottom: 2px solid $myYellow;
+    border-radius: 10px 10px 0 0;
+    transform: scale(1,1);
+  }
+
+  .navbar-nav .nav-link.active:hover {
+    border-bottom: 2px solid $myBlue;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .dropdown-menu {
+    background-color: $myBlue;
+  }
+
+  .dropdown-item {
+    color: $rColor;
+    font-weight: bold;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(9, 60, 100, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+
+  .navbar-toggler {
+    border-color: $myBlue;
+  }
+
+  &.isScrollDown {
+    background-color: #000 !important;
+    padding: 5px 17% 5px !important;
+    box-shadow: 0 1px 10px $myYellow;
+  }
+
+  .dropdown .dropdown-menu .dropdown-item:active,
+  .dropdown .dropdown-menu .dropdown-item:hover {
+    background: $myYellow;
+  }
+}
+
+@media screen and (min-width: 1450px) {
+  nav#navbar {
+    padding: 25px 300px 30px !important;
+
+    &.isScrollDown {
+      padding: 5px 350px 5px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  nav#navbar {
+    padding: 25px 4% 30px !important;
+
+    &.isScrollDown {
+      padding: 5px 5% 5px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 835px) {
+  nav#navbar {
+    font-size: smaller;
+    .navbar-brand {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  nav#navbar {
+    background-color: #000 !important;
+    box-shadow: 0 1px 10px $myYellow;
+  }
+}
