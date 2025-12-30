@@ -9,22 +9,22 @@ const data = {
     },
     "portfolios": [
         {
-            "name": "sijelapp",
-            "linkDemo": "https://sijelapp.bbpommataram.id",
+            "name": "dscomputer",
+            "linkDemo": "https://dscomputer.id",
             "linkDownload": "#",
             "imgName": "",
-            "title": "SIJELAPP<br />\"Sistem Jejak Telusur Laporan Pengujian Pihak Ketiga\"",
-            "tech": "Laravel & Bootstrap",
-            "faIcon": "fa-fighter-jet",
+            "title": "DS Computer",
+            "tech": "Online Shop",
+            "faIcon": "fa-shopping-cart",
         },
         {
-            "name": "percepat",
-            "linkDemo": "https://percepat.bbpommataram.id",
+            "name": "companyapp",
+            "linkDemo": "https://bbpommataram.id",
             "linkDownload": "#",
             "imgName": "",
-            "title": "PERCEPAT<br />\"Persediaan Cepat & Tepat\"",
-            "tech": "Laravel & Next.js & Tailwindcss",
-            "faIcon": "fa-pencil-square-o",
+            "title": "Company App",
+            "tech": "Company Profile",
+            "faIcon": "fa-building",
         },
         {
             "name": "posterkajian",
@@ -34,38 +34,11 @@ const data = {
             "title": "Poster & Info Kajian Lombok",
             "tech": "Next.js & Tailwindcss",
             "faIcon": "fa-book",
-        },
-        {
-            "name": "asikcuan",
-            "linkDemo": "https://asikcuan.bbpommataram.id/",
-            "linkDownload": "#",
-            "imgName": "",
-            "title": "ASIKCUAN<br />\"Aplikasi Kegiatan Mencakup Pertanggungjawaban\"",
-            "tech": "Next.js & Laravel & Tailwindcss",
-            "faIcon": "fa-envelope",
-        },
-        {
-            "name": "etamu",
-            "linkDemo": "https://e-tamu.bbpommataram.id/",
-            "linkDownload": "#",
-            "imgName": "",
-            "title": "E Tamu<br />\"Buku Tamu Elektronik\"",
-            "tech": "Next.js & Tailwindcss",
-            "faIcon": "fa-camera-retro",
-        },
-        {
-            "name": "olshop",
-            "linkDemo": "https://cahayasuksessejahtera.id/",
-            "linkDownload": "#",
-            "imgName": "",
-            "title": "Olshop<br />\"Toko online\"",
-            "tech": "Next.js & Tailwindcss",
-            "faIcon": "fa-shopping-cart",
         }
     ],
     "lang": {
         "about": "Hello there, my name is Arfan. I am a web developer, since early of 2021 I have been working at BBPOM Mataram as a software developer.",
-        "sayHi": "Say hii to me !!",
+        "sayHi": "Get in touch !!",
         "menus": [
             "Home",
             "Experiences",
@@ -144,7 +117,7 @@ const data = {
         ],
         "itemEdu": [
             {
-                "title": "Bachelor of Informatics Engineering",
+                "title": "S1 Informatics Engineering",
                 "period": "2016 - 2018",
                 "school": "STMIK Bumigora Mataram"
             },
@@ -171,42 +144,41 @@ const data = {
         ],
         "services": [
             {
+                "faIcon": "fa-code",
+                "name": "Web Development",
+                "desc": "Full-stack web development using modern technologies like Next.js, Laravel, and more"
+            },
+            {
+                "faIcon": "fa-mobile-phone",
+                "name": "Mobile Development",
+                "desc": "Cross-platform mobile application development for iOS and Android"
+            },
+            {
                 "faIcon": "fa-hospital-o",
                 "name": "Network Installation",
-                "desc": "Network setting, Mikrotik, etc"
+                "desc": "Network setting, Mikrotik configuration, and infrastructure setup"
             },
             {
-                "faIcon": "fa-terminal",
-                "name": "Back-End Coding",
-                "desc": "Back-end coding for your website, RestfulAPI, etc."
+                "faIcon": "fa-wrench",
+                "name": "Computer Repairing",
+                "desc": "Hardware repair, software troubleshooting, and system optimization"
             },
             {
-                "faIcon": "fa-laptop",
-                "name": "Web Design",
-                "desc": "Responsive design, SPA, etc."
+                "faIcon": "fa-graduation-cap",
+                "name": "Coding Course",
+                "desc": "Private programming lessons for beginners to advanced learners"
             },
             {
-                "faIcon": "fa-shopping-cart",
-                "name": "Online Shop App",
-                "desc": "Online shop website for your products."
-            },
-            {
-                "faIcon": "fa-desktop",
-                "name": "Desktop App",
-                "desc": "Desktop application for your company, shop, etc."
-            },
-            {
-                "faIcon": "fa-mortar-board",
-                "name": "Private Course",
-                "desc": "Private Course to learn Programming, Wordpress CMS, Linux, Office tools application, Computer Operation, etc."
+                "faIcon": "fa-lightbulb-o",
+                "name": "IT Consulting",
+                "desc": "Technology consulting and IT solutions for your business"
             }
         ],
         "portfolios": {
             "categories": [
                 "All",
-                "React.js",
-                "CodeIgniter",
-                "Java"
+                "Next.js",
+                "Laravel"
             ],
             "items": [
             ],
@@ -230,7 +202,7 @@ const indoLang = {
         "Web Developer",
     ],
     "subtitle1": "Siapa Saya ?",
-    "desc1": "Bismillah. Saya Muhammad Arfani Hidayat. Panggil saja Arfan, jika ingin kenal lebih jauh silahkan klik tombol di bawah. Trims",
+    "desc1": "Bismillah. Saya Muhammad Arfani Hidayat. Panggil saja Arfan, jika ingin kenal lebih jauh klik tombol di bawah. Trims",
     "labelWA": "Sapa Saya",
     "subtitle2": "Rincian",
     "desc2": [
@@ -259,7 +231,17 @@ const indoLang = {
     "subtitleEdu": "Pendidikan",
     "itemWorks": [
         {
-            "title": "Pengembang Perangkat Lunak",
+            "title": "Software Developer & IT Support",
+            "period": "Jan 2021 - Sekarang",
+            "company": "BBPOM di Mataram"
+        },
+        {
+            "title": "Software Developer (Freelancer)",
+            "period": "Jul 2020 - 2022",
+            "company": "Suvvort.com"
+        },
+        {
+            "title": "Software Developer",
             "period": "Sep 2017 - Jun 2020",
             "company": "PT. Cahaya Braja Marketindo"
         },
@@ -286,7 +268,7 @@ const indoLang = {
     ],
     "itemEdu": [
         {
-            "title": "S1 Teknologi Informatika",
+            "title": "S1 Teknik Informatika",
             "period": "2016 - 2018",
             "school": "STMIK Bumigora Mataram"
         },
@@ -314,46 +296,45 @@ const indoLang = {
     "servSubtitle": "Layanan Saya",
     "services": [
         {
+            "faIcon": "fa-code",
+            "name": "Pengembangan Web",
+            "desc": "Pengembangan web full-stack menggunakan teknologi modern seperti Next.js, Laravel, dan lainnya"
+        },
+        {
+            "faIcon": "fa-mobile-phone",
+            "name": "Pengembangan Mobile",
+            "desc": "Pengembangan aplikasi mobile cross-platform untuk iOS dan Android"
+        },
+        {
             "faIcon": "fa-hospital-o",
-            "name": "Instalasi Jaringan Komputer",
-            "desc": "Pengaturan Jaringan, Mikrotik, dll."
+            "name": "Instalasi Jaringan",
+            "desc": "Pengaturan jaringan, konfigurasi Mikrotik, dan infrastruktur"
         },
         {
-            "faIcon": "fa-terminal",
-            "name": "Koding Back-End",
-            "desc": "Kode back-end untuk website Anda, RestfulAPI, dll."
+            "faIcon": "fa-wrench",
+            "name": "Perbaikan Komputer",
+            "desc": "Perbaikan perangkat lunak, pemecahan masalah, dan optimasi sistem"
         },
         {
-            "faIcon": "fa-laptop",
-            "name": "Desain Web",
-            "desc": "Desain responsif, SPA, dll."
+            "faIcon": "fa-graduation-cap",
+            "name": "Kursus Coding",
+            "desc": "Les pemrograman privat untuk pemula hingga tingkat lanjut"
         },
         {
-            "faIcon": "fa-shopping-cart",
-            "name": "Aplikasi Toko Online",
-            "desc": "Toko online untuk menjual produk-produk Anda via internet."
-        },
-        {
-            "faIcon": "fa-desktop",
-            "name": "Aplikasi Desktop",
-            "desc": "Aplikasi desktop untuk perusahaan Anda, toko, dll."
-        },
-        {
-            "faIcon": "fa-mortar-board",
-            "name": "Kursus Private",
-            "desc": "Kursus private belajar Pemrograman, CMS Wordpress, Linux, Aplikasi perkantoran, Pengoperasian Komputer, dll."
+            "faIcon": "fa-lightbulb-o",
+            "name": "Konsultasi IT",
+            "desc": "Konsultasi teknologi dan solusi IT untuk bisnis Anda"
         }
     ],
     "portfolios": {
         "categories": [
             "Semua",
-            "React.js",
-            "CodeIgniter",
-            "Java"
+            "Next.js",
+            "Laravel"
         ],
         "items": [
         ],
-        "note": "Beberapa project tidak bisa ditampilkan disini"
+        "note": "Beberapa project tidak bisa ditampilkan dimana"
     },
 }
 
@@ -401,6 +382,16 @@ const sasakLang = {
     "subtitleEdu": "Sekolahan",
     "itemWorks": [
         {
+            "title": "Pengembang Perangkat Lunak & IT Support",
+            "period": "Jan 2021 - Sekarang",
+            "company": "BBPOM di Mataram"
+        },
+        {
+            "title": "Pengembang Perangkat Lunak (Freelancer)",
+            "period": "Jul 2020 - 2022",
+            "company": "Suvvort.com"
+        },
+        {
             "title": "Pengembang Perangkat Lunak",
             "period": "Sep 2017 - Jun 2020",
             "company": "PT. Cahaya Braja Marketindo"
@@ -428,7 +419,7 @@ const sasakLang = {
     ],
     "itemEdu": [
         {
-            "title": "S1 Teknologi Informatika",
+            "title": "S1 Teknik Informatika",
             "period": "2016 - 2018",
             "school": "STMIK Bumigora Mataram"
         },
@@ -456,42 +447,41 @@ const sasakLang = {
     "servSubtitle": "Layananku",
     "services": [
         {
+            "faIcon": "fa-code",
+            "name": "Pengembangan Web",
+            "desc": "Pengembangan web full-stack menggunakan teknologi modern seperti Next.js, Laravel, dan lainnya"
+        },
+        {
+            "faIcon": "fa-mobile-phone",
+            "name": "Pengembangan Mobile",
+            "desc": "Pengembangan aplikasi mobile cross-platform untuk iOS dan Android"
+        },
+        {
             "faIcon": "fa-hospital-o",
-            "name": "Instalasi Jaringan Komputer",
-            "desc": "Pengaturan Jaringan, Mikrotik, dll."
+            "name": "Instalasi Jaringan",
+            "desc": "Pengaturan jaringan, konfigurasi Mikrotik, dan infrastruktur"
         },
         {
-            "faIcon": "fa-terminal",
-            "name": "Koding Back-End",
-            "desc": "Kode back-end leq website Side, RestfulAPI, dll."
+            "faIcon": "fa-wrench",
+            "name": "Perbaikan Komputer",
+            "desc": "Perbaikan perangkat lunak, pemecahan masalah, dan optimasi sistem"
         },
         {
-            "faIcon": "fa-laptop",
-            "name": "Desain Web",
-            "desc": "Desain responsif, SPA, dll."
+            "faIcon": "fa-graduation-cap",
+            "name": "Kursus Coding",
+            "desc": "Les pemrograman privat untuk pemula hingga tingkat lanjut"
         },
         {
-            "faIcon": "fa-shopping-cart",
-            "name": "Aplikasi Toko Online",
-            "desc": "Toko online kadu pasarin produk-produk Side leq internet."
-        },
-        {
-            "faIcon": "fa-desktop",
-            "name": "Aplikasi Desktop",
-            "desc": "Aplikasi desktop kadu leq perusahaan Side, toko, dll."
-        },
-        {
-            "faIcon": "fa-mortar-board",
-            "name": "Kursus Private",
-            "desc": "Kursus private berajah Pemrograman, CMS Wordpress, Linux, Aplikasi perkantoran, Ngoprasian Komputer, dll."
+            "faIcon": "fa-lightbulb-o",
+            "name": "Konsultasi IT",
+            "desc": "Konsultasi teknologi dan solusi IT untuk bisnis Anda"
         }
     ],
     "portfolios": {
         "categories": [
             "Selapuk",
-            "React.js",
-            "CodeIgniter",
-            "Java"
+            "Next.js",
+            "Laravel"
         ],
         "items": [
         ],
@@ -500,3 +490,4 @@ const sasakLang = {
 }
 
 export { data, indoLang, sasakLang };
+

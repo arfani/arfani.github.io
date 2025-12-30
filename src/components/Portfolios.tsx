@@ -21,6 +21,8 @@ interface PortfoliosProps {
 
 export default function Portfolios({ data }: PortfoliosProps) {
   const [isLoading, setIsLoading] = useState(true);
+  const EXPERIENCE_START_YEAR = 2017 // First job started in Sep 2017
+  const yearsExperience = new Date().getFullYear() - EXPERIENCE_START_YEAR
 
   useEffect(() => {
     document.title = `rfun - ${data.lang.menus[3]}`;
@@ -33,21 +35,17 @@ export default function Portfolios({ data }: PortfoliosProps) {
 
   if (!data.portfolios || data.portfolios.length === 0) {
     return (
-      <div id="portfolios">
-        <div className="header" style={{
-          animation: 'fadeInDown 0.6s ease-out'
-        }}>
-          <h1>{data.lang.menus[3]}</h1>
-        </div>
-        <div className="content" style={{
-          animation: 'fadeIn 0.6s ease-out 0.2s both'
-        }}>
-          <div className="text-center py-5">
-            <div className="mb-3">
-              <i className="fa fa-folder-open" style={{ fontSize: '48px', color: '#6c757d' }}></i>
+      <div id="portfolios" className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50">
+        <div className="pt-20 pb-16 px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-white rounded-3xl p-8 sm:p-16 shadow-xl">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="fa fa-folder-open text-4xl sm:text-5xl text-gray-400"></span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">{data.lang.menus[3]}</h1>
+              <h4 className="text-xl sm:text-2xl text-gray-600 mb-4">No portfolios available</h4>
+              <p className="text-lg text-gray-500">Portfolio items will be displayed here when available.</p>
             </div>
-            <h4 className="text-muted">No portfolios available</h4>
-            <p className="text-muted">Portfolio items will be displayed here when available.</p>
           </div>
         </div>
       </div>
@@ -55,58 +53,74 @@ export default function Portfolios({ data }: PortfoliosProps) {
   }
 
   const Portfolio = data.portfolios?.map((item: PortfolioItem, i: number) => (
-    <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={i} style={{
-      animation: `fadeInUp 0.5s ease-out ${i * 0.1}s both`
-    }}>
-      <div className="service-block h-100">
-        <div className="service-info">
-          <div className="service-image">
-            <a
-              href={item.linkDemo !== '#' ? item.linkDemo : '#'}
-              target={item.linkDemo !== '#' ? '_blank' : '_self'}
-              rel={item.linkDemo !== '#' ? 'noopener noreferrer' : ''}
-              title={item.linkDemo === '#' ? "Demo isn't available" : "Click for demo !"}
-              className={item.linkDemo === '#' ? 'disabled' : ''}
-            >
-              <span className={`fa ${item.faIcon}`}></span>
-            </a>
+    <div key={i} className="group">
+      <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full relative overflow-hidden">
+        {/* Decorative gradient border on top */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+        {/* Project icon */}
+        <div className="relative mb-6">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-purple-500/30">
+            <span className={`fa ${item.faIcon} text-2xl sm:text-3xl text-white`} />
+          </div>
+          {/* Floating badge */}
+          {item.linkDemo !== '#' && (
+            <div className="absolute -top-2 -right-2 w-7 h-7 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+              <span className="fa fa-external-link text-white text-xs"></span>
+            </div>
+          )}
+        </div>
+
+        {/* Content */}
+        <div className="text-center">
+          <h5
+            className="text-lg sm:text-xl font-bold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors duration-300 line-clamp-2"
+            dangerouslySetInnerHTML={{ __html: item.title }}
+          ></h5>
+          <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="fa fa-code mr-2"></span>
+            {item.tech}
           </div>
         </div>
-        <h5 dangerouslySetInnerHTML={{ __html: item.title }}></h5>
-        <p className="text-primary mb-0">{item.tech}</p>
 
-        {item.linkDemo !== '#' && (
-          <div className="mt-3">
+        {/* Action button */}
+        {item.linkDemo !== '#' ? (
+          <div className="mt-6">
             <a
               href={item.linkDemo}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline-primary btn-sm"
+              className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/30"
             >
-              <i className="fa fa-external-link"></i> View Demo
+              <span className="fa fa-external-link text-lg"></span>
+              <span>View Live Demo</span>
             </a>
           </div>
+        ) : (
+          <div className="mt-6">
+            <div className="w-full inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-500 px-6 py-3 rounded-xl font-semibold cursor-not-allowed">
+              <span className="fa fa-lock text-lg"></span>
+              <span>Demo Not Available</span>
+            </div>
+          </div>
         )}
+
+        {/* Hover overlay effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-pink-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
       </div>
     </div>
   ));
 
   if (isLoading) {
     return (
-      <div id="portfolios">
-        <div className="header" style={{
-          animation: 'fadeInDown 0.6s ease-out'
-        }}>
-          <h1>{data.lang.menus[3]}</h1>
-        </div>
-        <div className="content" style={{
-          animation: 'fadeIn 0.6s ease-out 0.2s both'
-        }}>
-          <div className="text-center py-5">
-            <div className="spinner-border text-primary" role="status">
-              <span className="sr-only">Loading...</span>
+      <div id="portfolios" className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50">
+        <div className="pt-20 pb-16 px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-white rounded-3xl p-8 sm:p-16 shadow-xl">
+              <div className="w-16 h-16 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-6"></div>
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">{data.lang.menus[3]}</h1>
+              <p className="text-lg text-gray-600">Loading amazing projects...</p>
             </div>
-            <p className="mt-3 text-muted">Loading portfolios...</p>
           </div>
         </div>
       </div>
@@ -114,19 +128,95 @@ export default function Portfolios({ data }: PortfoliosProps) {
   }
 
   return (
-    <div id="portfolios">
-      <div className="header" style={{
-        animation: 'fadeInDown 0.6s ease-out'
-      }}>
-        <h1>{data.lang.menus[3]}</h1>
+    <div id="portfolios" className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50">
+      {/* Header Section */}
+      <div className="pt-8 pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></span>
+            Creative Solutions
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+            {data.lang.menus[3]}
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+            Explore my portfolio of digital projects, each crafted with passion and attention to detail to deliver exceptional user experiences.
+          </p>
+        </div>
       </div>
-      <div className="content" style={{
-        animation: 'fadeIn 0.6s ease-out 0.2s both'
-      }}>
-        <div className="row">
-          {Portfolio}
+
+      {/* Portfolio Grid */}
+      <div className="pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {Portfolio}
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <span className="fa fa-chart-bar mr-2"></span>
+              Project Statistics
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Track Record</h2>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { number: data.portfolios.length, label: "Completed Projects", icon: "fa-check-circle", color: "from-blue-500 to-blue-600" },
+              { number: "100%", label: "Client Satisfaction", icon: "fa-heart", color: "from-red-500 to-pink-500" },
+              { number: "24/7", label: "Support Available", icon: "fa-headset", color: "from-green-500 to-emerald-500" },
+              { number: `${yearsExperience}+`, label: "Years Experience", icon: "fa-calendar", color: "from-purple-500 to-pink-500" }
+            ].map((stat, index) => (
+              <div
+                key={index}
+                className="group text-center p-4 sm:p-6 rounded-2xl bg-gray-50 hover:bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <div className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <span className={`fa ${stat.icon} text-white text-xl`}></span>
+                </div>
+                <div className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{stat.number}</div>
+                <p className="text-gray-600 font-medium text-sm">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Call to Action */}
+      <div className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="relative bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 rounded-3xl p-8 sm:p-12 text-white shadow-2xl overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-full translate-x-20 -translate-y-20"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 translate-y-16"></div>
+            </div>
+
+            <div className="relative z-10">
+              <div className="flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur rounded-2xl mx-auto mb-6">
+                <span className="fa fa-lightbulb text-white text-3xl"></span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Have a Project in Mind?</h2>
+              <p className="text-lg sm:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                Let's collaborate to bring your vision to life with cutting-edge technology and creative design.
+              </p>
+              <a
+                href="https://wa.me/6281907456710?text=Hi%20Arfan,%20I%20have%20a%20project%20idea%20I'd%20like%20to%20discuss"
+                className="inline-flex items-center gap-3 bg-white text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                <span className="fa fa-rocket text-lg"></span>
+                Start Your Project
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+

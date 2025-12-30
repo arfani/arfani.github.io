@@ -1,161 +1,202 @@
-import { Component } from "react";
-import { NavLink } from "react-router-dom";
-import {
-  Collapse,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  Nav,
-  Navbar,
-  NavbarToggler,
-  NavItem,
-  UncontrolledDropdown
-} from "reactstrap";
-import Swal from 'sweetalert2';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 interface NavbarProps {
-  data: any;
+  data: {
+    lang?: {
+      menus?: string[];
+    };
+  };
   convertLang: (lang: string) => void;
 }
 
-interface NavbarState {
-  isOpen: boolean;
-}
+export default function Navbar({ data, convertLang }: NavbarProps) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-export default class NavBar extends Component<NavbarProps, NavbarState> {
-  constructor(props: NavbarProps) {
-    super(props);
+  // Use data to get menu labels for better i18n support
+  const menuLabels = data.lang?.menus || ['Home', 'Experiences', 'Services', 'Portfolios', 'Certificates'];
 
-    this.toggle = this.toggle.bind(this);
-    this.collapse = this.collapse.bind(this);
-    this.cs = this.cs.bind(this);
-    this.ConvertLangAndCollapse = this.ConvertLangAndCollapse.bind(this);
+  const navItems = [
+    { path: '/', label: 'Home' },
+    { path: '/experiences', label: 'Experiences' },
+    { path: '/services', label: 'Services' },
+    { path: '/portfolios', label: 'Portfolios' },
+    { path: '/certificates', label: 'Certificates' },
+  ];
 
-    this.state = {
-      isOpen: false,
-    };
-  }
+  const isActive = (path: string) => {
+    return window.location.pathname === path;
+  };
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.changeNav);
-  }
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Brand Logo */}
+          <div className="flex-shrink-0 flex items-center">
+            <NavLink to="/" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300 group-hover:scale-105">
+                <span className="text-white font-bold text-lg">R</span>
+              </div>
+              <span className="text-xl font-bold text-gray-800 hidden sm:block group-hover:text-blue-600 transition-colors duration-300">
+                r'Fun
+              </span>
+            </NavLink>
+          </div>
 
-  changeNav() {
-    const distanceY = window.pageXOffset || document.documentElement.scrollTop;
-    const shrinkOn = 40;
-    const nav = document.getElementById("navbar");
-    if (nav) {
-      distanceY > shrinkOn
-        ? nav.classList.add("isScrollDown")
-        : nav.classList.remove("isScrollDown");
-    }
-  }
-
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-
-  collapse() {
-    this.setState({
-      isOpen: false
-    });
-  }
-
-  ConvertLangAndCollapse(lang: string) {
-    this.setState({
-      isOpen: false
-    });
-    this.props.convertLang(lang);
-  }
-
-  cs() {
-    Swal.fire({
-      title: 'Not available yet',
-      text: 'Sorry for this issue!',
-      icon: 'warning',
-      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!'
-    });
-  }
-
-  render() {
-    return (
-      <Navbar className="fixed-top" color="light" light expand="md" id="navbar">
-        <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="mx-auto" navbar>
-            <NavItem>
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navItems.map((item) => (
               <NavLink
-                to="/"
-                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
-                onClick={this.collapse}
+                key={item.path}
+                to={item.path}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${isActive(item.path)
+                  ? 'bg-blue-50 text-blue-600 shadow-sm'
+                  : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                  }`}
               >
-                {this.props.data.lang.menus[0]}
+                {item.label}
               </NavLink>
-            </NavItem>
-            <NavItem>
+            ))}
+          </div>
+
+          {/* Language Selector & CTA */}
+          <div className="hidden lg:flex items-center gap-4">
+            <div className="relative group">
+              <button className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 text-gray-600 hover:text-blue-600 hover:border-blue-200 transition-all duration-300 bg-white hover:bg-blue-50">
+                <span className="fa fa-globe text-blue-500"></span>
+                <span className="text-sm font-medium">EN</span>
+                <span className="fa fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></span>
+              </button>
+              {/* Dropdown menu */}
+              <div className="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right">
+                <div className="py-2">
+                  <button
+                    onClick={() => convertLang('english')}
+                    className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                  >
+                    <span className="fa fa-check mr-2 opacity-0"></span>
+                    English
+                  </button>
+                  <button
+                    onClick={() => convertLang('indonesia')}
+                    className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                  >
+                    <span className="fa fa-check mr-2 opacity-0"></span>
+                    Indonesia
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="https://wa.me/6281907456710"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-semibold rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
+            >
+              <span className="fa fa-whatsapp"></span>
+              <span>Let's Talk</span>
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden flex items-center gap-2">
+            <a
+              href="https://wa.me/6281907456710"
+              className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-105"
+            >
+              <span className="fa fa-whatsapp text-lg"></span>
+            </a>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-all duration-300 hover:scale-105"
+            >
+              {isMobileMenuOpen ? (
+                <span className="fa fa-times text-lg"></span>
+              ) : (
+                <span className="fa fa-bars text-lg"></span>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          onClick={() => setIsMobileMenuOpen(false)}
+        ></div>
+
+        {/* Mobile Menu Drawer */}
+        <div
+          className={`absolute top-16 left-0 right-0 bg-white shadow-2xl transition-transform duration-300 ease-out ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+            }`}
+        >
+          <div className="px-4 py-6 space-y-2">
+            {/* Mobile Navigation Links */}
+            {navItems.map((item, index) => (
               <NavLink
-                to="/experiences"
-                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
-                onClick={this.collapse}
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${isActive(item.path)
+                  ? 'bg-blue-50 text-blue-600'
+                  : 'text-gray-600 hover:bg-gray-50 hover:text-blue-600'
+                  }`}
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                {this.props.data.lang.menus[1]}
+                <span className="fa fa-circle text-xs mr-3 opacity-0"></span>
+                {item.label}
               </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                to="/services"
-                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
-                onClick={this.collapse}
-              >
-                {this.props.data.lang.menus[2]}
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                to="/portfolios"
-                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
-                onClick={this.collapse}
-              >
-                {this.props.data.lang.menus[3]}
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                to="/certificates"
-                className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
-                onClick={this.collapse}
-              >
-                {this.props.data.lang.menus[5]}
-              </NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret title="Select your language">
-                {this.props.data.lang.menus[4]}
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem
-                  onClick={() => this.ConvertLangAndCollapse("english")}
+            ))}
+
+            {/* Language Switcher Mobile */}
+            <div className="border-t border-gray-100 pt-4 mt-4">
+              <p className="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                Language
+              </p>
+              <div className="flex gap-2 px-4">
+                <button
+                  onClick={() => {
+                    convertLang('english');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="flex-1 py-2 px-4 rounded-lg border border-gray-200 text-sm font-medium text-gray-600 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300"
                 >
+                  <span className="fa fa-check mr-1 opacity-50"></span>
                   English
-                </DropdownItem>
-                <DropdownItem
-                  onClick={() => this.ConvertLangAndCollapse("indo")}
+                </button>
+                <button
+                  onClick={() => {
+                    convertLang('indonesia');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="flex-1 py-2 px-4 rounded-lg border border-gray-200 text-sm font-medium text-gray-600 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300"
                 >
-                  Bahasa Indonesia
-                </DropdownItem>
-                <DropdownItem
-                  onClick={() => this.ConvertLangAndCollapse("sasak")}
-                >
-                  Sasak (Lombok)
-                </DropdownItem>
-                <DropdownItem onClick={this.cs}>العربية</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-        </Collapse>
-      </Navbar>
-    );
-  }
+                  <span className="fa fa-check mr-1 opacity-50"></span>
+                  Indonesia
+                </button>
+              </div>
+            </div>
+
+            {/* CTA Button Mobile */}
+            <div className="pt-4 px-4">
+              <a
+                href="https://wa.me/6281907456710"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/40 transition-all duration-300"
+              >
+                <span className="fa fa-whatsapp"></span>
+                Let's Talk
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 }
+

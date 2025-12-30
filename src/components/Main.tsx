@@ -26,7 +26,7 @@ export default function Main({ rootData, convertLang }: MainProps) {
   return (
     <Fragment>
       <Navbar data={rootData} convertLang={convertLang} />
-      <div id="box">
+      <div id="box" className='pt-20'>
         <Routes location={location} key={location.pathname}>
           <Route
             path="/"

@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 
 import "./assets/css/global.css";
