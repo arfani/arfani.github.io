@@ -191,7 +191,7 @@ const indoLang = {
     "about": "Halo, nama saya Arfan. Saya adalah seorang web developer, sejak awal tahun 2021 saya bekerja di BBPOM Mataram sebagai software developer.",
     "sayHi": "Sapa saya disini !!",
     "menus": [
-        "Rumah",
+        "Beranda",
         "Pengalaman",
         "Layanan",
         "Portofolio",

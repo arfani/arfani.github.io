@@ -14,14 +14,14 @@ export default function Navbar({ data, convertLang }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Use data to get menu labels for better i18n support
-  const menuLabels = data.lang?.menus || ['Home', 'Experiences', 'Services', 'Portfolios', 'Certificates'];
+  const menuLabels = data.lang?.menus || ['Home', 'Experiences', 'Services', 'Portfolios', 'Lang', 'Certificates'];
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/experiences', label: 'Experiences' },
-    { path: '/services', label: 'Services' },
-    { path: '/portfolios', label: 'Portfolios' },
-    { path: '/certificates', label: 'Certificates' },
+    { path: '/', label: menuLabels[0] || 'Home' },
+    { path: '/experiences', label: menuLabels[1] || 'Experiences' },
+    { path: '/services', label: menuLabels[2] || 'Services' },
+    { path: '/portfolios', label: menuLabels[3] || 'Portfolios' },
+    { path: '/certificates', label: menuLabels[5] || 'Certificates' },
   ];
 
   const isActive = (path: string) => {
@@ -69,20 +69,20 @@ export default function Navbar({ data, convertLang }: NavbarProps) {
                 <span className="fa fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></span>
               </button>
               {/* Dropdown menu */}
-              <div className="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right">
+              <div className="absolute right-0 mt-2 w-40 bg-gray-50 rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right">
                 <div className="py-2">
                   <button
                     onClick={() => convertLang('english')}
-                    className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                    className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 flex items-center gap-3"
                   >
-                    <span className="fa fa-check mr-2 opacity-0"></span>
+                    <img src="/icons/united-kingdom.svg" alt="English" className="w-6 h-3 flex-shrink-0" />
                     English
                   </button>
                   <button
-                    onClick={() => convertLang('indonesia')}
-                    className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                    onClick={() => convertLang('indo')}
+                    className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 flex items-center gap-3"
                   >
-                    <span className="fa fa-check mr-2 opacity-0"></span>
+                    <img src="/icons/indonesia.svg" alt="Indonesia" className="w-6 h-3 flex-shrink-0" />
                     Indonesia
                   </button>
                 </div>
@@ -157,7 +157,7 @@ export default function Navbar({ data, convertLang }: NavbarProps) {
             {/* Language Switcher Mobile */}
             <div className="border-t border-gray-100 pt-4 mt-4">
               <p className="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                Language
+                Bahasa
               </p>
               <div className="flex gap-2 px-4">
                 <button
@@ -165,19 +165,19 @@ export default function Navbar({ data, convertLang }: NavbarProps) {
                     convertLang('english');
                     setIsMobileMenuOpen(false);
                   }}
-                  className="flex-1 py-2 px-4 rounded-lg border border-gray-200 text-sm font-medium text-gray-600 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300"
+                  className="flex-1 py-2 px-4 rounded-lg border border-gray-200 text-sm font-medium text-gray-600 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <span className="fa fa-check mr-1 opacity-50"></span>
+                  <img src="/icons/united-kingdom.svg" alt="English" className="w-6 h-3 flex-shrink-0" />
                   English
                 </button>
                 <button
                   onClick={() => {
-                    convertLang('indonesia');
+                    convertLang('indo');
                     setIsMobileMenuOpen(false);
                   }}
-                  className="flex-1 py-2 px-4 rounded-lg border border-gray-200 text-sm font-medium text-gray-600 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300"
+                  className="flex-1 py-2 px-4 rounded-lg border border-gray-200 text-sm font-medium text-gray-600 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <span className="fa fa-check mr-1 opacity-50"></span>
+                  <img src="/icons/indonesia.svg" alt="Indonesia" className="w-6 h-3 flex-shrink-0" />
                   Indonesia
                 </button>
               </div>

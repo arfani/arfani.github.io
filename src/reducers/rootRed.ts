@@ -8,28 +8,56 @@ interface ConvLangAction {
 
 const rootRed = (state = data, action: ConvLangAction) => {
   if (action.type === "convLang") {
+    let newLang;
     switch (action.lang) {
       case "english":
-        state = { ...state };
-        state.lang = data.lang;
+        newLang = data.lang;
         break;
       case "indo":
-        state = { ...state };
-        state.lang = indoLang;
+        newLang = indoLang;
         break;
       case "sasak":
-        state = { ...state };
-        state.lang = sasakLang;
+        newLang = sasakLang;
         break;
       case "arab":
-        state = { ...state };
-        state.lang = action.dataLang ? action.dataLang : (data.lang || state.lang);
+        newLang = action.dataLang ? action.dataLang : (data.lang || state.lang);
         break;
       default:
-        break;
+        newLang = data.lang;
     }
+
+    // Save language preference to localStorage
+    try {
+      localStorage.setItem('preferredLang', action.lang);
+    } catch {
+      console.log('Could not save language preference');
+    }
+
+    return { ...state, lang: newLang };
   }
   return state;
 };
 
 export default rootRed;
+
+// Helper function to get initial language from localStorage
+export const getInitialLang = () => {
+  try {
+    const savedLang = localStorage.getItem('preferredLang');
+    if (savedLang) {
+      switch (savedLang) {
+        case "english":
+          return data.lang;
+        case "indo":
+          return indoLang;
+        case "sasak":
+          return sasakLang;
+        default:
+          return data.lang;
+      }
+    }
+  } catch {
+    console.log('Could not read language preference');
+  }
+  return data.lang;
+};
