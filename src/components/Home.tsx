@@ -20,7 +20,8 @@ export default function Home({ data }: HomeProps) {
     }
   }, [])
 
-  const { lang, links, name } = data
+  const { lang } = data
+  const { name } = data
 
   return (
     <div id="home" className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
@@ -51,7 +52,7 @@ export default function Home({ data }: HomeProps) {
                 {/* Experience badge */}
                 <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
                   <span className="fa fa-star"></span>
-                  <span className="font-semibold text-sm">{yearsExperience}+ Years</span>
+                  <span className="font-semibold text-sm">{yearsExperience}+ {lang.yearsExperience}</span>
                 </div>
               </div>
             </div>
@@ -61,7 +62,7 @@ export default function Home({ data }: HomeProps) {
               {/* Badge */}
               <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
-                Web Developer
+                {lang.webDeveloper}
               </div>
 
               {/* Name - Muhammad on first line, Arfan Hidayat on second line */}
@@ -102,7 +103,7 @@ export default function Home({ data }: HomeProps) {
                 <span className="fa fa-user text-white text-2xl"></span>
               </div>
 
-              <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">About Me</h2>
+              <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">{lang.aboutTitle}</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-8 text-center max-w-2xl mx-auto">
                 {lang.about}
               </p>
@@ -110,10 +111,10 @@ export default function Home({ data }: HomeProps) {
               {/* Features grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                 {[
-                  { icon: 'fa-code', label: 'Clean Code', color: 'bg-blue-100 text-blue-600' },
-                  { icon: 'fa-rocket', label: 'Fast Delivery', color: 'bg-green-100 text-green-600' },
-                  { icon: 'fa-mobile', label: 'Responsive', color: 'bg-purple-100 text-purple-600' },
-                  { icon: 'fa-shield', label: 'Secure', color: 'bg-orange-100 text-orange-600' },
+                  { icon: 'fa-code', label: lang.cleanCode, color: 'bg-blue-100 text-blue-600' },
+                  { icon: 'fa-rocket', label: lang.fastDelivery, color: 'bg-green-100 text-green-600' },
+                  { icon: 'fa-mobile', label: lang.responsive, color: 'bg-purple-100 text-purple-600' },
+                  { icon: 'fa-shield', label: lang.secure, color: 'bg-orange-100 text-orange-600' },
                 ].map((feature) => (
                   <div key={feature.label} className="text-center p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
                     <div className={`w-12 h-12 ${feature.color} rounded-xl flex items-center justify-center mx-auto mb-2`}>
@@ -128,7 +129,7 @@ export default function Home({ data }: HomeProps) {
               <div className="flex justify-center mt-8">
                 <div className="text-sm inline-flex items-center bg-green-100 text-green-700 px-6 py-3 rounded-full font-semibold">
                   <span className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                  Available for freelance projects
+                  {lang.availableFreelance}
                 </div>
               </div>
             </div>
@@ -142,9 +143,9 @@ export default function Home({ data }: HomeProps) {
           <div className="text-center mb-12">
             <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <span className="fa fa-star mr-2"></span>
-              Expertise
+              {lang.expertise}
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800">Skills & Technologies</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800">{lang.skillsTitle}</h2>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -193,16 +194,16 @@ export default function Home({ data }: HomeProps) {
             </div>
 
             <div className="relative z-10 text-center">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4">Let's Build Something Amazing Together</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4">{lang.ctaTitle}</h2>
               <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                Have a project in mind? I'd love to hear about it. Let's collaborate and bring your ideas to life!
+                {lang.ctaDesc}
               </p>
               <a
                 href="https://wa.me/6281907456710?text=Hi%20Arfan,%20I%20have%20a%20project%20idea"
                 className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <span className="fa fa-rocket text-lg"></span>
-                Start Your Project
+                {lang.startProject}
               </a>
             </div>
           </div>

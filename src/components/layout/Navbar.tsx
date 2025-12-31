@@ -85,6 +85,13 @@ export default function Navbar({ data, convertLang }: NavbarProps) {
                     <img src="/icons/indonesia.svg" alt="Indonesia" className="w-6 h-3 flex-shrink-0" />
                     Indonesia
                   </button>
+                  <button
+                    onClick={() => convertLang('arab')}
+                    className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 flex items-center gap-3"
+                  >
+                    <img src="/icons/arabic.svg" alt="Arabic" className="w-6 h-3 flex-shrink-0" />
+                    العربية
+                  </button>
                 </div>
               </div>
             </div>
@@ -179,6 +186,16 @@ export default function Navbar({ data, convertLang }: NavbarProps) {
                 >
                   <img src="/icons/indonesia.svg" alt="Indonesia" className="w-6 h-3 flex-shrink-0" />
                   Indonesia
+                </button>
+                <button
+                  onClick={() => {
+                    convertLang('arab');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="flex-1 py-2 px-4 rounded-lg border border-gray-200 text-sm font-medium text-gray-600 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2"
+                >
+                  <img src="/icons/arabic.svg" alt="Arabic" className="w-6 h-3 flex-shrink-0" />
+                  العربية
                 </button>
               </div>
             </div>
