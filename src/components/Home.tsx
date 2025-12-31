@@ -72,43 +72,6 @@ export default function Home({ data }: HomeProps) {
                 </span>
               </h1>
 
-              {/* Profession */}
-              {/* <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                {lang.profession?.join(", ") || "Professional Web Developer"}
-              </p> */}
-
-              {/* Social Links - Enhanced */}
-              <div className="flex gap-4 justify-center lg:justify-start mb-8">
-                <a
-                  href={links.github}
-                  className="group w-12 h-12 sm:w-14 sm:h-14 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-gray-900 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 shadow-lg"
-                  aria-label="GitHub"
-                >
-                  <span className="fa fa-github text-lg sm:text-xl group-hover:rotate-12 transition-transform duration-300"></span>
-                </a>
-                {/* <a
-                  href={linkWa}
-                  className="group w-12 h-12 sm:w-14 sm:h-14 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 shadow-lg"
-                  aria-label="WhatsApp"
-                >
-                  <span className="fa fa-whatsapp text-lg sm:text-xl group-hover:rotate-12 transition-transform duration-300"></span>
-                </a>
-                <a
-                  href="mailto:Arfanihidayat@gmail.com"
-                  className="group w-12 h-12 sm:w-14 sm:h-14 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 shadow-lg"
-                  aria-label="Email"
-                >
-                  <span className="fa fa-envelope text-lg sm:text-xl group-hover:rotate-12 transition-transform duration-300"></span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/muhammad-arfani"
-                  className="group w-12 h-12 sm:w-14 sm:h-14 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 shadow-lg"
-                  aria-label="LinkedIn"
-                >
-                  <span className="fa fa-linkedin text-lg sm:text-xl group-hover:rotate-12 transition-transform duration-300"></span>
-                </a> */}
-              </div>
-
               {/* CTA Button - Enhanced */}
               <a
                 href={linkWa}
