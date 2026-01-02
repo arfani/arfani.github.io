@@ -13,6 +13,7 @@ interface PortfolioItem {
 interface PortfoliosProps {
   data: {
     portfolios: PortfolioItem[];
+    isDarkMode?: boolean;
     lang: {
       menus: string[];
       portfolioEmptyTitle: string;
