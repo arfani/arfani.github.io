@@ -165,49 +165,47 @@ export default function Navbar({ data, convertLang, toggleDarkMode, isDarkMode: 
             </button>
 
             <div className="relative group">
-              <button className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-300 bg-white hover:bg-blue-50 ${isDarkMode
-                ? 'border-gray-700 text-gray-300 hover:text-blue-400 hover:border-blue-800'
-                : 'border-gray-200 text-gray-600 hover:text-blue-600 hover:border-blue-200'
+              <button className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-300 hover:bg-blue-50 ${isDarkMode
+                ? 'bg-gray-800 border-gray-700 text-gray-300 hover:text-blue-400 hover:border-blue-800 hover:bg-gray-700'
+                : 'bg-white border-gray-200 text-gray-600 hover:text-blue-600 hover:border-blue-200'
                 }`}>
                 <img src={getCurrentFlag()} alt={getCurrentLangLabel()} className="w-6 h-4 flex-shrink-0" />
                 <span className="text-sm font-medium">{getCurrentLangLabel()}</span>
                 <span className="fa fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></span>
               </button>
               {/* Dropdown menu */}
-              <div className={`absolute right-0 mt-2 w-40 rounded-xl shadow-xl border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-gray-50 border-gray-100'
+              <div className={`absolute right-0 mt-2 w-40 rounded-xl shadow-xl border py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'
                 }`}>
-                <div className="py-2">
-                  <button
-                    onClick={() => handleLangChange('english')}
-                    className={`w-full px-4 py-2 text-left text-sm transition-colors duration-200 flex items-center gap-3 ${isDarkMode
-                      ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-700'
-                      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
-                      }`}
-                  >
-                    <img src="/icons/united-kingdom.svg" alt="English" className="w-6 h-3 flex-shrink-0" />
-                    {langLabels.english}
-                  </button>
-                  <button
-                    onClick={() => handleLangChange('indo')}
-                    className={`w-full px-4 py-2 text-left text-sm transition-colors duration-200 flex items-center gap-3 ${isDarkMode
-                      ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-700'
-                      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
-                      }`}
-                  >
-                    <img src="/icons/indonesia.svg" alt="Indonesia" className="w-6 h-3 flex-shrink-0" />
-                    {langLabels.indo}
-                  </button>
-                  <button
-                    onClick={() => handleLangChange('arab')}
-                    className={`w-full px-4 py-2 text-left text-sm transition-colors duration-200 flex items-center gap-3 ${isDarkMode
-                      ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-700'
-                      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
-                      }`}
-                  >
-                    <img src="/icons/arabic.svg" alt="Arabic" className="w-6 h-3 flex-shrink-0" />
-                    {langLabels.arab}
-                  </button>
-                </div>
+                <button
+                  onClick={() => handleLangChange('english')}
+                  className={`w-full px-4 py-2 text-left text-sm transition-colors duration-200 flex items-center gap-3 ${isDarkMode
+                    ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-700'
+                    : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                >
+                  <img src="/icons/united-kingdom.svg" alt="English" className="w-6 h-3 flex-shrink-0" />
+                  {langLabels.english}
+                </button>
+                <button
+                  onClick={() => handleLangChange('indo')}
+                  className={`w-full px-4 py-2 text-left text-sm transition-colors duration-200 flex items-center gap-3 ${isDarkMode
+                    ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-700'
+                    : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                >
+                  <img src="/icons/indonesia.svg" alt="Indonesia" className="w-6 h-3 flex-shrink-0" />
+                  {langLabels.indo}
+                </button>
+                <button
+                  onClick={() => handleLangChange('arab')}
+                  className={`w-full px-4 py-2 text-left text-sm transition-colors duration-200 flex items-center gap-3 ${isDarkMode
+                    ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-700'
+                    : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                >
+                  <img src="/icons/arabic.svg" alt="Arabic" className="w-6 h-3 flex-shrink-0" />
+                  {langLabels.arab}
+                </button>
               </div>
             </div>
 
