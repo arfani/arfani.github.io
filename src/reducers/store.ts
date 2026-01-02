@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import { data, indoLang } from './data';
+import { arabicLang, data, indoLang } from './data';
 import rootRed from './rootRed';
 
 // Helper to get initial state with saved language preference
@@ -14,6 +14,9 @@ const getInitialState = () => {
                     break;
                 case "indo":
                     initialState.lang = indoLang;
+                    break;
+                case "arab":
+                    initialState.lang = arabicLang;
                     break;
                 default:
                     initialState.lang = data.lang;

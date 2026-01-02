@@ -248,6 +248,10 @@ const data = {
         "portfolioCtaTitle": "Have a Project in Mind?",
         "portfolioCtaDesc": "Let's collaborate to bring your vision to life with cutting-edge technology and creative design.",
         "portfolioCtaButton": "Start Your Project",
+        // Language selector
+        "langEnglish": "English",
+        "langIndonesian": "Indonesia",
+        "langArabic": "العربية",
         // Certificates page translations
         "loadingCertificates": "Loading professional certifications...",
         "certHeaderBadge": "Professional Achievements",
@@ -488,6 +492,10 @@ const indoLang = {
     "portfolioCtaTitle": "Punya Ide Proyek?",
     "portfolioCtaDesc": "Mari berkolaborasi untuk mewujudkan visi Anda dengan teknologi mutakhir dan desain kreatif.",
     "portfolioCtaButton": "Mulai Proyek Anda",
+    // Language selector
+    "langEnglish": "English",
+    "langIndonesian": "Indonesia",
+    "langArabic": "العربية",
     // Certificates page translations
     "loadingCertificates": "Memuat sertifikasi profesional...",
     "certHeaderBadge": "Pencapaian Profesional",
@@ -727,6 +735,10 @@ const arabicLang = {
     "portfolioCtaTitle": "هل لديك فكرة مشروع؟",
     "portfolioCtaDesc": "دعونا نتعاون لتحقيق رؤيتك بأحدث التقنيات والتصميم الإبداعي.",
     "portfolioCtaButton": "ابدأ مشروعك",
+    // Language selector
+    "langEnglish": "English",
+    "langIndonesian": "Indonesia",
+    "langArabic": "العربية",
     // Certificates page translations
     "loadingCertificates": "جاري تحميل الشهادات المهنية...",
     "certHeaderBadge": "الإنجازات المهنية",

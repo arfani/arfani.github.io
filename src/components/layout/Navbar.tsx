@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 interface NavbarProps {
   data: {
     lang?: {
       menus?: string[];
+      langEnglish?: string;
+      langIndonesian?: string;
+      langArabic?: string;
     };
   };
   convertLang: (lang: string) => void;
@@ -12,9 +15,58 @@ interface NavbarProps {
 
 export default function Navbar({ data, convertLang }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState('english');
 
   // Use data to get menu labels for better i18n support
   const menuLabels = data.lang?.menus || ['Home', 'Experiences', 'Services', 'Portfolios', 'Lang', 'Certificates'];
+
+  // Get language display names
+  const langLabels = {
+    english: data.lang?.langEnglish || 'English',
+    indo: data.lang?.langIndonesian || 'Indonesia',
+    arab: data.lang?.langArabic || 'العربية',
+  };
+
+  // Get current language from localStorage on mount
+  useEffect(() => {
+    try {
+      const savedLang = localStorage.getItem('preferredLang');
+      if (savedLang) {
+        setCurrentLang(savedLang);
+      }
+    } catch {
+      console.log('Could not read language preference');
+    }
+  }, []);
+
+  const handleLangChange = (lang: string) => {
+    setCurrentLang(lang);
+    convertLang(lang);
+  };
+
+  // Get current language display label
+  const getCurrentLangLabel = () => {
+    switch (currentLang) {
+      case 'indo':
+        return langLabels.indo;
+      case 'arab':
+        return langLabels.arab;
+      default:
+        return langLabels.english;
+    }
+  };
+
+  // Get current language flag
+  const getCurrentFlag = () => {
+    switch (currentLang) {
+      case 'indo':
+        return '/icons/indonesia.svg';
+      case 'arab':
+        return '/icons/arabic.svg';
+      default:
+        return '/icons/united-kingdom.svg';
+    }
+  };
 
   const navItems = [
     { path: '/', label: menuLabels[0] || 'Home' },
@@ -64,33 +116,33 @@ export default function Navbar({ data, convertLang }: NavbarProps) {
           <div className="hidden lg:flex items-center gap-4">
             <div className="relative group">
               <button className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 text-gray-600 hover:text-blue-600 hover:border-blue-200 transition-all duration-300 bg-white hover:bg-blue-50">
-                <span className="fa fa-globe text-blue-500"></span>
-                <span className="text-sm font-medium">EN</span>
+                <img src={getCurrentFlag()} alt={getCurrentLangLabel()} className="w-6 h-4 flex-shrink-0" />
+                <span className="text-sm font-medium">{getCurrentLangLabel()}</span>
                 <span className="fa fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></span>
               </button>
               {/* Dropdown menu */}
               <div className="absolute right-0 mt-2 w-40 bg-gray-50 rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right">
                 <div className="py-2">
                   <button
-                    onClick={() => convertLang('english')}
+                    onClick={() => handleLangChange('english')}
                     className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 flex items-center gap-3"
                   >
                     <img src="/icons/united-kingdom.svg" alt="English" className="w-6 h-3 flex-shrink-0" />
-                    English
+                    {langLabels.english}
                   </button>
                   <button
-                    onClick={() => convertLang('indo')}
+                    onClick={() => handleLangChange('indo')}
                     className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 flex items-center gap-3"
                   >
                     <img src="/icons/indonesia.svg" alt="Indonesia" className="w-6 h-3 flex-shrink-0" />
-                    Indonesia
+                    {langLabels.indo}
                   </button>
                   <button
-                    onClick={() => convertLang('arab')}
+                    onClick={() => handleLangChange('arab')}
                     className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200 flex items-center gap-3"
                   >
                     <img src="/icons/arabic.svg" alt="Arabic" className="w-6 h-3 flex-shrink-0" />
-                    العربية
+                    {langLabels.arab}
                   </button>
                 </div>
               </div>
@@ -169,33 +221,33 @@ export default function Navbar({ data, convertLang }: NavbarProps) {
               <div className="flex gap-2 px-4">
                 <button
                   onClick={() => {
-                    convertLang('english');
+                    handleLangChange('english');
                     setIsMobileMenuOpen(false);
                   }}
                   className="flex-1 py-2 px-4 rounded-lg border border-gray-200 text-sm font-medium text-gray-600 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <img src="/icons/united-kingdom.svg" alt="English" className="w-6 h-3 flex-shrink-0" />
-                  English
+                  {langLabels.english}
                 </button>
                 <button
                   onClick={() => {
-                    convertLang('indo');
+                    handleLangChange('indo');
                     setIsMobileMenuOpen(false);
                   }}
                   className="flex-1 py-2 px-4 rounded-lg border border-gray-200 text-sm font-medium text-gray-600 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <img src="/icons/indonesia.svg" alt="Indonesia" className="w-6 h-3 flex-shrink-0" />
-                  Indonesia
+                  {langLabels.indo}
                 </button>
                 <button
                   onClick={() => {
-                    convertLang('arab');
+                    handleLangChange('arab');
                     setIsMobileMenuOpen(false);
                   }}
                   className="flex-1 py-2 px-4 rounded-lg border border-gray-200 text-sm font-medium text-gray-600 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <img src="/icons/arabic.svg" alt="Arabic" className="w-6 h-3 flex-shrink-0" />
-                  العربية
+                  {langLabels.arab}
                 </button>
               </div>
             </div>
