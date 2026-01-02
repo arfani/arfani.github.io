@@ -51,7 +51,7 @@ export default function Main({ rootData, convertLang }: MainProps) {
           <Route path="*" element={<P404 />} />
         </Routes>
       </div>
-      <Footer />
+      <Footer data={rootData} />
     </Fragment>
   )
 }

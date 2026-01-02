@@ -248,7 +248,19 @@ const data = {
         "portfolioCtaTitle": "Have a Project in Mind?",
         "portfolioCtaDesc": "Let's collaborate to bring your vision to life with cutting-edge technology and creative design.",
         "portfolioCtaButton": "Start Your Project",
+        // Footer translations
+        "footerBrandDesc": "Passionate web developer creating digital solutions that make a difference. Let's build something amazing together!",
+        "footerQuickLinks": "Quick Links",
+        "footerGetInTouch": "Get In Touch",
+        "footerContactEmail": "arfanihidayat@gmail.com",
+        "footerContactPhone": "+62 819 0745 6710",
+        "footerContactLocation": "Mataram, Lombok, Indonesia",
+        "footerCtaButton": "Let's Talk",
+        "footerCopyright": "Built with ❤️ using",
+        "footerTechReact": "React.js",
+        "footerBackToTop": "Back to top",
         // Language selector
+
         "langEnglish": "English",
         "langIndonesian": "Indonesia",
         "langArabic": "العربية",
@@ -492,7 +504,19 @@ const indoLang = {
     "portfolioCtaTitle": "Punya Ide Proyek?",
     "portfolioCtaDesc": "Mari berkolaborasi untuk mewujudkan visi Anda dengan teknologi mutakhir dan desain kreatif.",
     "portfolioCtaButton": "Mulai Proyek Anda",
+    // Footer translations
+    "footerBrandDesc": "Pengembang web yang penuh semangat menciptakan solusi digital yang membuat perbedaan. Mari bangun sesuatu yang luar biasa bersama!",
+    "footerQuickLinks": "Tautan Cepat",
+    "footerGetInTouch": "Hubungi Kami",
+    "footerContactEmail": "arfanihidayat@gmail.com",
+    "footerContactPhone": "+62 819 0745 6710",
+    "footerContactLocation": "Mataram, Lombok, Indonesia",
+    "footerCtaButton": "Mari Bicara",
+    "footerCopyright": "Dibuat dengan ❤️ menggunakan",
+    "footerTechReact": "React.js",
+    "footerBackToTop": "Kembali ke atas",
     // Language selector
+
     "langEnglish": "English",
     "langIndonesian": "Indonesia",
     "langArabic": "العربية",
@@ -762,7 +786,18 @@ const arabicLang = {
     "skillProgramming": "البرمجة",
     "certCtaTitle": "التعلم المستمر",
     "certCtaDesc": "أؤمن بالتعلم المستمر ومواكبة أحدث التقنيات وأفضل الممارسات.",
-    "certCtaButton": "تواصل معي"
+    "certCtaButton": "تواصل معي",
+    // Footer translations
+    "footerBrandDesc": "مطور ويب شغوف ينشئ حلولاً رقمية تحدث فرقاً. دعونا نبني شيئاً رائعاً معاً!",
+    "footerQuickLinks": "روابط سريعة",
+    "footerGetInTouch": "تواصل معنا",
+    "footerContactEmail": "arfanihayat@gmail.com",
+    "footerContactPhone": "+62 819 0745 6710",
+    "footerContactLocation": "ماتارام، لومبوك، إندونيسيا",
+    "footerCtaButton": "دعونا نتحدث",
+    "footerCopyright": "تم بناؤه بـ ❤️ باستخدام",
+    "footerTechReact": "React.js",
+    "footerBackToTop": "العودة للأعلى"
 }
 
 export { arabicLang, data, indoLang };

@@ -1,7 +1,43 @@
 import { JSX } from "react";
 
-export default function Footer(): JSX.Element {
+interface FooterProps {
+  data: {
+    lang?: {
+      menus?: string[];
+      footerBrandDesc?: string;
+      footerQuickLinks?: string;
+      footerGetInTouch?: string;
+      footerContactEmail?: string;
+      footerContactPhone?: string;
+      footerContactLocation?: string;
+      footerCtaButton?: string;
+      footerCopyright?: string;
+      footerTechReact?: string;
+      footerBackToTop?: string;
+    };
+  };
+  convertLang?: (lang: string) => void;
+}
+
+export default function Footer({ data }: FooterProps): JSX.Element {
   const currentYear = new Date().getFullYear();
+
+  // Get menu labels from data, with fallbacks
+  const menuLabels = data.lang?.menus || ['Home', 'Experiences', 'Services', 'Portfolios', 'Lang', 'Certificates'];
+
+  // Get translation values with fallbacks
+  const t = {
+    brandDesc: data.lang?.footerBrandDesc || "Passionate web developer creating digital solutions that make a difference. Let's build something amazing together!",
+    quickLinks: data.lang?.footerQuickLinks || "Quick Links",
+    getInTouch: data.lang?.footerGetInTouch || "Get In Touch",
+    contactEmail: data.lang?.footerContactEmail || "arfanihidayat@gmail.com",
+    contactPhone: data.lang?.footerContactPhone || "+62 819 0745 6710",
+    contactLocation: data.lang?.footerContactLocation || "Mataram, Lombok, Indonesia",
+    ctaButton: data.lang?.footerCtaButton || "Let's Talk",
+    copyright: data.lang?.footerCopyright || "Built with ❤️ using",
+    techReact: data.lang?.footerTechReact || "React.js",
+    backToTop: data.lang?.footerBackToTop || "Back to top",
+  };
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
@@ -18,7 +54,7 @@ export default function Footer(): JSX.Element {
                 <h3 className="text-2xl font-bold text-white">r'Fun</h3>
               </div>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Passionate web developer creating digital solutions that make a difference. Let's build something amazing together!
+                {t.brandDesc}
               </p>
               {/* Social Links */}
               <div className="flex justify-center md:justify-start space-x-4">
@@ -63,15 +99,15 @@ export default function Footer(): JSX.Element {
             <div className="text-center">
               <h4 className="text-lg font-semibold mb-6 flex items-center justify-center">
                 <span className="fa fa-link mr-2 text-blue-400"></span>
-                Quick Links
+                {t.quickLinks}
               </h4>
               <div className="space-y-3">
                 {[
-                  { name: "Home", href: "/", icon: "fa-home" },
-                  { name: "Experiences", href: "/experiences", icon: "fa-briefcase" },
-                  { name: "Services", href: "/services", icon: "fa-cogs" },
-                  { name: "Portfolios", href: "/portfolios", icon: "fa-folder" },
-                  { name: "Certificates", href: "/certificates", icon: "fa-certificate" }
+                  { name: menuLabels[0] || 'Home', href: "/", icon: "fa-home" },
+                  { name: menuLabels[1] || 'Experiences', href: "/experiences", icon: "fa-briefcase" },
+                  { name: menuLabels[2] || 'Services', href: "/services", icon: "fa-cogs" },
+                  { name: menuLabels[3] || 'Portfolios', href: "/portfolios", icon: "fa-folder" },
+                  { name: menuLabels[5] || 'Certificates', href: "/certificates", icon: "fa-certificate" }
                 ].map((link, index) => (
                   <a
                     key={index}
@@ -89,24 +125,24 @@ export default function Footer(): JSX.Element {
             <div className="text-center md:text-right">
               <h4 className="text-lg font-semibold mb-6 flex items-center justify-center md:justify-end">
                 <span className="fa fa-paper-plane mr-2 text-blue-400"></span>
-                Get In Touch
+                {t.getInTouch}
               </h4>
               <div className="space-y-4">
                 <div className="flex items-center justify-center md:justify-end text-gray-400">
                   <span className="fa fa-envelope mr-3 text-blue-400 w-5 text-center"></span>
-                  <a href="mailto:Arfanihidayat@gmail.com" className="hover:text-blue-400 transition-colors duration-300">
-                    arfanihidayat@gmail.com
+                  <a href={`mailto:${t.contactEmail}`} className="hover:text-blue-400 transition-colors duration-300">
+                    {t.contactEmail}
                   </a>
                 </div>
                 <div className="flex items-center justify-center md:justify-end text-gray-400">
                   <span className="fa fa-phone mr-3 text-green-400 w-5 text-center"></span>
-                  <a href="tel:+6281907456710" className="hover:text-green-400 transition-colors duration-300">
-                    +62 819 0745 6710
+                  <a href={`tel:${t.contactPhone}`} className="hover:text-green-400 transition-colors duration-300">
+                    {t.contactPhone}
                   </a>
                 </div>
                 <div className="flex items-center justify-center md:justify-end text-gray-400">
                   <span className="fa fa-map-marker mr-3 text-red-400 w-5 text-center"></span>
-                  <span>Mataram, Lombok, Indonesia</span>
+                  <span>{t.contactLocation}</span>
                 </div>
               </div>
 
@@ -119,7 +155,7 @@ export default function Footer(): JSX.Element {
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/30 hover:shadow-green-500/40"
                 >
                   <span className="fa fa-comments"></span>
-                  Let's Talk
+                  {t.ctaButton}
                 </a>
               </div>
             </div>
@@ -133,8 +169,8 @@ export default function Footer(): JSX.Element {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-center md:text-left text-sm">
               <span className="fa fa-copyright mr-1"></span>
-              {currentYear} r'Fun. Built with ❤️ using
-              <span className="text-blue-400 font-semibold mx-1">React.js</span>
+              {currentYear} r'Fun. {t.copyright}
+              <span className="text-blue-400 font-semibold mx-1">{t.techReact}</span>
             </p>
 
             {/* Back to top button */}
@@ -146,7 +182,7 @@ export default function Footer(): JSX.Element {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
-              <span>Back to top</span>
+              <span>{t.backToTop}</span>
               <span className="fa fa-arrow-up"></span>
             </a>
           </div>
