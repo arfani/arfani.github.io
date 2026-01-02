@@ -15,6 +15,22 @@ interface PortfoliosProps {
     portfolios: PortfolioItem[];
     lang: {
       menus: string[];
+      portfolioEmptyTitle: string;
+      portfolioEmptyDesc: string;
+      loadingPortfolio: string;
+      viewLiveDemo: string;
+      demoNotAvailable: string;
+      portfolioHeaderBadge: string;
+      portfolioHeaderDesc: string;
+      portfolioStatsBadge: string;
+      portfolioStatsTitle: string;
+      statCompletedProjects: string;
+      statClientSatisfaction: string;
+      statSupportAvailable: string;
+      statYearsExperience: string;
+      portfolioCtaTitle: string;
+      portfolioCtaDesc: string;
+      portfolioCtaButton: string;
     };
   };
 }
@@ -43,8 +59,8 @@ export default function Portfolios({ data }: PortfoliosProps) {
                 <span className="fa fa-folder-open text-4xl sm:text-5xl text-gray-400"></span>
               </div>
               <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">{data.lang.menus[3]}</h1>
-              <h4 className="text-xl sm:text-2xl text-gray-600 mb-4">No portfolios available</h4>
-              <p className="text-lg text-gray-500">Portfolio items will be displayed here when available.</p>
+              <h4 className="text-xl sm:text-2xl text-gray-600 mb-4">{data.lang.portfolioEmptyTitle}</h4>
+              <p className="text-lg text-gray-500">{data.lang.portfolioEmptyDesc}</p>
             </div>
           </div>
         </div>
@@ -93,14 +109,14 @@ export default function Portfolios({ data }: PortfoliosProps) {
               className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/30"
             >
               <span className="fa fa-external-link text-lg"></span>
-              <span>View Live Demo</span>
+              <span>{data.lang.viewLiveDemo}</span>
             </a>
           </div>
         ) : (
           <div className="mt-6">
             <div className="w-full inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-500 px-6 py-3 rounded-xl font-semibold cursor-not-allowed">
               <span className="fa fa-lock text-lg"></span>
-              <span>Demo Not Available</span>
+              <span>{data.lang.demoNotAvailable}</span>
             </div>
           </div>
         )}
@@ -119,7 +135,7 @@ export default function Portfolios({ data }: PortfoliosProps) {
             <div className="bg-white rounded-3xl p-8 sm:p-16 shadow-xl">
               <div className="w-16 h-16 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-6"></div>
               <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">{data.lang.menus[3]}</h1>
-              <p className="text-lg text-gray-600">Loading amazing projects...</p>
+              <p className="text-lg text-gray-600">{data.lang.loadingPortfolio}</p>
             </div>
           </div>
         </div>
@@ -134,13 +150,13 @@ export default function Portfolios({ data }: PortfoliosProps) {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
             <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></span>
-            Creative Solutions
+            {data.lang.portfolioHeaderBadge}
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
             {data.lang.menus[3]}
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore my portfolio of digital projects, each crafted with passion and attention to detail to deliver exceptional user experiences.
+            {data.lang.portfolioHeaderDesc}
           </p>
         </div>
       </div>
@@ -160,17 +176,17 @@ export default function Portfolios({ data }: PortfoliosProps) {
           <div className="text-center mb-10">
             <div className="inline-flex items-center bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <span className="fa fa-chart-bar mr-2"></span>
-              Project Statistics
+              {data.lang.portfolioStatsBadge}
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Track Record</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">{data.lang.portfolioStatsTitle}</h2>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { number: data.portfolios.length, label: "Completed Projects", icon: "fa-check-circle", color: "from-blue-500 to-blue-600" },
-              { number: "100%", label: "Client Satisfaction", icon: "fa-heart", color: "from-red-500 to-pink-500" },
-              { number: "24/7", label: "Support Available", icon: "fa-headset", color: "from-green-500 to-emerald-500" },
-              { number: `${yearsExperience}+`, label: "Years Experience", icon: "fa-calendar", color: "from-purple-500 to-pink-500" }
+              { number: data.portfolios.length, label: data.lang.statCompletedProjects, icon: "fa-check-circle", color: "from-blue-500 to-blue-600" },
+              { number: "100%", label: data.lang.statClientSatisfaction, icon: "fa-heart", color: "from-red-500 to-pink-500" },
+              { number: "24/7", label: data.lang.statSupportAvailable, icon: "fa-headset", color: "from-green-500 to-emerald-500" },
+              { number: `${yearsExperience}+`, label: data.lang.statYearsExperience, icon: "fa-calendar", color: "from-purple-500 to-pink-500" }
             ].map((stat, index) => (
               <div
                 key={index}
@@ -201,16 +217,16 @@ export default function Portfolios({ data }: PortfoliosProps) {
               <div className="flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur rounded-2xl mx-auto mb-6">
                 <span className="fa fa-lightbulb text-white text-3xl"></span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Have a Project in Mind?</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">{data.lang.portfolioCtaTitle}</h2>
               <p className="text-lg sm:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                Let's collaborate to bring your vision to life with cutting-edge technology and creative design.
+                {data.lang.portfolioCtaDesc}
               </p>
               <a
                 href="https://wa.me/6281907456710?text=Hi%20Arfan,%20I%20have%20a%20project%20idea%20I'd%20like%20to%20discuss"
                 className="inline-flex items-center gap-3 bg-white text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <span className="fa fa-rocket text-lg"></span>
-                Start Your Project
+                {data.lang.portfolioCtaButton}
               </a>
             </div>
           </div>

@@ -45,13 +45,13 @@ export default function Services({ data }: ServicesProps) {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
-            Services & Solutions
+            {data.lang.servicesBadge}
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
             {data.lang.menus[2]}
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            Professional development services tailored to bring your digital ideas to life with cutting-edge technology and modern design.
+            {data.lang.servicesHeaderDesc}
           </p>
         </div>
       </div>
@@ -79,16 +79,16 @@ export default function Services({ data }: ServicesProps) {
               <div className="flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur rounded-2xl mx-auto mb-6">
                 <span className="fa fa-rocket text-white text-3xl"></span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">{data.lang.servicesCtaTitle}</h2>
               <p className="text-lg sm:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                Let's collaborate to create something amazing together
+                {data.lang.servicesCtaDesc}
               </p>
               <a
                 href="https://wa.me/6281907456710?text=Hi%20Arfan,%20I'm%20interested%20in%20your%20services"
                 className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <span className="fa fa-whatsapp text-lg"></span>
-                Get In Touch
+                {data.lang.servicesCtaButton}
               </a>
             </div>
           </div>
@@ -101,29 +101,29 @@ export default function Services({ data }: ServicesProps) {
           <div className="text-center mb-12">
             <div className="inline-flex items-center bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <span className="fa fa-star mr-2"></span>
-              Why Choose Me
+              {data.lang.servicesFeaturesBadge}
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">What Sets Me Apart</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">{data.lang.servicesFeaturesTitle}</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 icon: "fa-rocket",
-                title: "Fast Delivery",
-                desc: "Quick turnaround times without compromising quality",
+                title: data.lang.featureFastDelivery,
+                desc: data.lang.featureFastDeliveryDesc,
                 color: "from-orange-500 to-red-500"
               },
               {
                 icon: "fa-shield-alt",
-                title: "Responsive Design",
-                desc: "Responsive and mobile-friendly design for all screen sizes",
+                title: data.lang.featureResponsive,
+                desc: data.lang.featureResponsiveDesc,
                 color: "from-green-500 to-emerald-500"
               },
               {
                 icon: "fa-headset",
-                title: "Consulting & Support",
-                desc: "Ongoing support and maintenance for your peace of mind",
+                title: data.lang.featureConsulting,
+                desc: data.lang.featureConsultingDesc,
                 color: "from-blue-500 to-cyan-500"
               }
             ].map((feature, index) => (

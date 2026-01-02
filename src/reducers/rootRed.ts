@@ -1,4 +1,4 @@
-import { arabicLang, data, indoLang, sasakLang } from "./data";
+import { arabicLang, data, indoLang } from "./data";
 
 interface ConvLangAction {
   type: 'convLang';
@@ -15,9 +15,6 @@ const rootRed = (state = data, action: ConvLangAction) => {
         break;
       case "indo":
         newLang = indoLang;
-        break;
-      case "sasak":
-        newLang = sasakLang;
         break;
       case "arab":
         newLang = arabicLang;
@@ -50,8 +47,6 @@ export const getInitialLang = () => {
           return data.lang;
         case "indo":
           return indoLang;
-        case "sasak":
-          return sasakLang;
         case "arab":
           return arabicLang;
         default:
@@ -63,3 +58,4 @@ export const getInitialLang = () => {
   }
   return data.lang;
 };
+

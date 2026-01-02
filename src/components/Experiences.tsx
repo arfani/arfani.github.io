@@ -77,13 +77,13 @@ export default function Experiences({ data }: ExperiencesProps) {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
             <span className="fa fa-road mr-2"></span>
-            Professional Journey
+            {data.lang.expHeaderBadge}
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
             {data.lang.menus[1]}
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            A timeline of my professional experiences and educational background, showcasing my journey in technology and development.
+            {data.lang.expHeaderDesc}
           </p>
         </div>
       </div>
@@ -100,7 +100,7 @@ export default function Experiences({ data }: ExperiencesProps) {
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-gray-800">{data.lang.subtitleWork}</h2>
-                  <p className="text-gray-500 text-sm">Work Experience</p>
+                  <p className="text-gray-500 text-sm">{data.lang.expWorkDesc}</p>
                 </div>
               </div>
               <div className="relative">
@@ -116,7 +116,7 @@ export default function Experiences({ data }: ExperiencesProps) {
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-gray-800">{data.lang.subtitleEdu}</h2>
-                  <p className="text-gray-500 text-sm">Education</p>
+                  <p className="text-gray-500 text-sm">{data.lang.expEduDesc}</p>
                 </div>
               </div>
               <div className="relative">
@@ -133,21 +133,21 @@ export default function Experiences({ data }: ExperiencesProps) {
           <div className="text-center mb-10">
             <div className="inline-flex items-center bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <span className="fa fa-cogs mr-2"></span>
-              Core Competencies
+              {data.lang.skillsBadge}
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">What I Do</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">{data.lang.expSkillsTitle}</h2>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { skill: "Full-Stack Development", icon: "fa-code", color: "from-blue-500 to-blue-600", useFa: true },
-              { skill: "Next.js", icon: "nextjs.svg", color: "from-gray-800 to-gray-900", isWordmark: false },
-              { skill: "Laravel", icon: "laravel.svg", color: "from-red-500 to-red-600", isOriginal: true },
-              { skill: "Slicing HTML", icon: "figma.svg", color: "from-pink-500 to-pink-600", isWordmark: false },
-              { skill: "Database Management", icon: "mysql.svg", color: "from-cyan-400 to-cyan-500", isWordmark: false },
-              { skill: "API Development", icon: "fa-plug", color: "from-purple-500 to-purple-600", useFa: true },
-              { skill: "System Architecture", icon: "docker.svg", color: "from-blue-600 to-blue-700", isWordmark: false },
-              { skill: "Team Leadership", icon: "fa-users", color: "from-orange-500 to-orange-600", useFa: true }
+              { skill: "skillFullStack", icon: "fa-code", color: "from-blue-500 to-blue-600", useFa: true },
+              { skill: "skillNextJs", icon: "nextjs.svg", color: "from-gray-800 to-gray-900", isWordmark: false },
+              { skill: "skillLaravel", icon: "laravel.svg", color: "from-red-500 to-red-600", isOriginal: true },
+              { skill: "skillSlicing", icon: "figma.svg", color: "from-pink-500 to-pink-600", isWordmark: false },
+              { skill: "skillDatabase", icon: "mysql.svg", color: "from-cyan-400 to-cyan-500", isWordmark: false },
+              { skill: "skillApi", icon: "fa-plug", color: "from-purple-500 to-purple-600", useFa: true },
+              { skill: "skillArchitecture", icon: "docker.svg", color: "from-blue-600 to-blue-700", isWordmark: false },
+              { skill: "skillLeadership", icon: "fa-users", color: "from-orange-500 to-orange-600", useFa: true }
             ].map((item, index) => (
               <div
                 key={index}
@@ -157,14 +157,14 @@ export default function Experiences({ data }: ExperiencesProps) {
                   {item.useFa ? (
                     <span className={`fa ${item.icon} text-white text-xl`}></span>
                   ) : item.isOriginal ? (
-                    <img src={`/icons/${item.icon}`} alt={item.skill} className="w-9 h-9 brightness-110 contrast-125" />
+                    <img src={`/icons/${item.icon}`} alt={data.lang[item.skill as keyof typeof data.lang]} className="w-9 h-9 brightness-110 contrast-125" />
                   ) : item.isWordmark ? (
-                    <img src={`/icons/${item.icon}`} alt={item.skill} className="w-14 h-6" />
+                    <img src={`/icons/${item.icon}`} alt={data.lang[item.skill as keyof typeof data.lang]} className="w-14 h-6" />
                   ) : (
-                    <img src={`/icons/${item.icon}`} alt={item.skill} className="w-8 h-8" />
+                    <img src={`/icons/${item.icon}`} alt={data.lang[item.skill as keyof typeof data.lang]} className="w-8 h-8" />
                   )}
                 </div>
-                <p className="font-semibold text-gray-700 text-sm">{item.skill}</p>
+                <p className="font-semibold text-gray-700 text-sm">{data.lang[item.skill as keyof typeof data.lang]}</p>
               </div>
             ))}
           </div>
@@ -185,16 +185,16 @@ export default function Experiences({ data }: ExperiencesProps) {
               <div className="flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur rounded-2xl mx-auto mb-6">
                 <span className="fa fa-handshake text-white text-3xl"></span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Let's Work Together</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">{data.lang.expCtaTitle}</h2>
               <p className="text-lg sm:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                Interested in collaborating on your next project? I'd love to hear from you.
+                {data.lang.expCtaDesc}
               </p>
               <a
                 href="https://wa.me/6281907456710?text=Hi%20Arfan,%20I'm%20interested%20in%20discussing%20a%20project"
                 className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <span className="fa fa-whatsapp text-lg"></span>
-                Let's Connect
+                {data.lang.ctaButton}
               </a>
             </div>
           </div>

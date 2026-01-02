@@ -197,7 +197,57 @@ const data = {
         "skillsTitle": "Skills & Technologies",
         "ctaTitle": "Let's Build Something Amazing Together",
         "ctaDesc": "Have a project in mind? I'd love to hear about it. Let's collaborate and bring your ideas to life!",
-        "startProject": "Start Your Project"
+        "startProject": "Start Your Project",
+        // Experiences page
+        "expHeaderBadge": "Professional Journey",
+        "expHeaderDesc": "A timeline of my professional experiences and educational background, showcasing my journey in technology and development.",
+        "expWorkDesc": "Work Experience",
+        "expEduDesc": "Education",
+        "skillsBadge": "Core Competencies",
+        "expSkillsTitle": "What I Do",
+        "expCtaTitle": "Let's Work Together",
+        "expCtaDesc": "Interested in collaborating on your next project? I'd love to hear from you.",
+        "ctaButton": "Let's Connect",
+        // Skills translations
+        "skillFullStack": "Full-Stack Development",
+        "skillNextJs": "Next.js",
+        "skillLaravel": "Laravel",
+        "skillSlicing": "Slicing HTML",
+        "skillDatabase": "Database Management",
+        "skillApi": "API Development",
+        "skillArchitecture": "System Architecture",
+        "skillLeadership": "Team Leadership",
+        // Services page
+        "servicesBadge": "Services & Solutions",
+        "servicesHeaderDesc": "Professional development services tailored to bring your digital ideas to life with cutting-edge technology and modern design.",
+        "servicesCtaTitle": "Ready to Start Your Project?",
+        "servicesCtaDesc": "Let's collaborate to create something amazing together",
+        "servicesCtaButton": "Get In Touch",
+        "servicesFeaturesBadge": "Why Choose Me",
+        "servicesFeaturesTitle": "What Sets Me Apart",
+        "featureFastDelivery": "Fast Delivery",
+        "featureFastDeliveryDesc": "Quick turnaround times without compromising quality",
+        "featureResponsive": "Responsive Design",
+        "featureResponsiveDesc": "Responsive and mobile-friendly design for all screen sizes",
+        "featureConsulting": "Consulting & Support",
+        "featureConsultingDesc": "Ongoing support and maintenance for your peace of mind",
+        // Portfolios page translations
+        "portfolioEmptyTitle": "No portfolios available",
+        "portfolioEmptyDesc": "Portfolio items will be displayed here when available.",
+        "loadingPortfolio": "Loading amazing projects...",
+        "viewLiveDemo": "View Live Demo",
+        "demoNotAvailable": "Demo Not Available",
+        "portfolioHeaderBadge": "Creative Solutions",
+        "portfolioHeaderDesc": "Explore my portfolio of digital projects, each crafted with passion and attention to detail to deliver exceptional user experiences.",
+        "portfolioStatsBadge": "Project Statistics",
+        "portfolioStatsTitle": "Track Record",
+        "statCompletedProjects": "Completed Projects",
+        "statClientSatisfaction": "Client Satisfaction",
+        "statSupportAvailable": "Support Available",
+        "statYearsExperience": "Years Experience",
+        "portfolioCtaTitle": "Have a Project in Mind?",
+        "portfolioCtaDesc": "Let's collaborate to bring your vision to life with cutting-edge technology and creative design.",
+        "portfolioCtaButton": "Start Your Project"
     }
 }
 
@@ -363,172 +413,57 @@ const indoLang = {
     "skillsTitle": "Keterampilan & Teknologi",
     "ctaTitle": "Mari Membangun Sesuatu Yang Luar Biasa Bersama",
     "ctaDesc": "Punya ide proyek? Saya sangat ingin mendengarnya. Mari berkolaborasi dan wujudkan ide Anda!",
-    "startProject": "Mulai Proyek Anda"
-}
-
-const sasakLang = {
-    "about": "Halo, aran tiang Arfan. Pegawean tiang jari web developer, leman awal tahun 2021 tiang begawean leq BBPOM Mataram jari software developer.",
-    "sayHi": "Sapa' tiang leq te !!",
-    "menus": [
-        "Bale",
-        "Pengalaman",
-        "Pelayanan",
-        "Portofolio",
-        "Bahase",
-        "Sertifikat",
-    ],
-    "profession": [
-        "Web Developer",
-    ],
-    "subtitle1": "Sai Aku ?",
-    "desc1": "Bismillah. Aranku Muhammad Arfani Hidayat. Mpoh bae Arfan, lamun Side mele lebih akrab kance aku teken bae tombol leq bawaq ni. Tampiasih",
-    "labelWA": "Sapa' Aku",
-    "subtitle2": "Rincian",
-    "desc2": [
-        {
-            "label": "Lahir",
-            "value": "Mataram, 3 Mei 1993"
-        },
-        {
-            "label": "Kediaman",
-            "value": "Indonesia"
-        },
-        {
-            "label": "Alamat",
-            "value": "Mataram, Lombok"
-        },
-        {
-            "label": "Email",
-            "value": "Arfanihidayat@gmail.com"
-        },
-        {
-            "label": "Freelance",
-            "value": "Bau doang"
-        }
-    ],
-    "subtitleWork": "Pegawean",
-    "subtitleEdu": "Sekolahan",
-    "itemWorks": [
-        {
-            "title": "Pengembang Perangkat Lunak & IT Support",
-            "period": "Jan 2021 - Sekarang",
-            "company": "BBPOM di Mataram"
-        },
-        {
-            "title": "Pengembang Perangkat Lunak (Freelancer)",
-            "period": "Jul 2020 - 2022",
-            "company": "Suvvort.com"
-        },
-        {
-            "title": "Pengembang Perangkat Lunak",
-            "period": "Sep 2017 - Jun 2020",
-            "company": "PT. Cahaya Braja Marketindo"
-        },
-        {
-            "title": "IT Support",
-            "period": "Jan 2017 - Apr 2017",
-            "company": "AKBID Bhakti Kencana Mataram"
-        },
-        {
-            "title": "Guru Komputer",
-            "period": "Sep 2015 - Apr 2017",
-            "company": "SMK Bhakti Kencana Mataram"
-        },
-        {
-            "title": "Pengunjung",
-            "period": "Feb 2013 - Dec 2014",
-            "company": "KISEL Mataram"
-        },
-        {
-            "title": "Pegawe",
-            "period": "Mar 2011 - Agu 2011",
-            "company": "Galaxy Electronic"
-        }
-    ],
-    "itemEdu": [
-        {
-            "title": "S1 Teknik Informatika",
-            "period": "2016 - 2018",
-            "school": "STMIK Bumigora Mataram"
-        },
-        {
-            "title": "D3 Teknik Komputer",
-            "period": "2012 - 2015",
-            "school": "AMIKOM Mataram"
-        },
-        {
-            "title": "SMA IPA",
-            "period": "2008 - 2011",
-            "school": "Madrasah Aliyah Negeri 1 Mataram"
-        },
-        {
-            "title": "SMP",
-            "period": "2005 - 2008",
-            "school": "SMP Negeri 16 Mataram"
-        },
-        {
-            "title": "SD",
-            "period": "1999 - 2005",
-            "school": "SD Negeri 3 Karang Jangkong"
-        }
-    ],
-    "servSubtitle": "Layananku",
-    "services": [
-        {
-            "faIcon": "fa-code",
-            "name": "Pengembangan Web",
-            "desc": "Pengembangan web full-stack menggunakan teknologi modern seperti Next.js, Laravel, dan lainnya"
-        },
-        {
-            "faIcon": "fa-mobile-phone",
-            "name": "Pengembangan Mobile",
-            "desc": "Pengembangan aplikasi mobile cross-platform untuk iOS dan Android"
-        },
-        {
-            "faIcon": "fa-hospital-o",
-            "name": "Instalasi Jaringan",
-            "desc": "Pengaturan jaringan, konfigurasi Mikrotik, dan infrastruktur"
-        },
-        {
-            "faIcon": "fa-wrench",
-            "name": "Perbaikan Komputer",
-            "desc": "Perbaikan perangkat lunak, pemecahan masalah, dan optimasi sistem"
-        },
-        {
-            "faIcon": "fa-graduation-cap",
-            "name": "Kursus Coding",
-            "desc": "Les pemrograman privat untuk pemula hingga tingkat lanjut"
-        },
-        {
-            "faIcon": "fa-lightbulb-o",
-            "name": "Konsultasi IT",
-            "desc": "Konsultasi teknologi dan solusi IT untuk bisnis Anda"
-        }
-    ],
-    "portfolios": {
-        "categories": [
-            "Selapuk",
-            "Next.js",
-            "Laravel"
-        ],
-        "items": [
-        ],
-        "note": "Araq sebagian Project dekn bau te share leq te"
-    },
-    // Home page translations
-    "webDeveloper": "Web Developer",
-    "aboutTitle": "Tentang Aku",
-    "yearsExperience": "Taun Pengalaman",
-    "cleanCode": "Kode Bersik",
-    "fastDelivery": "Cepat Ngantek",
-    "responsive": "Mrespon",
-    "secure": "Aman",
-    "availableFreelance": "Bau dongan proyek freelance",
-    "expertise": "Keahlian",
-    "skillsTitle": "Keterampilan & Teknologi",
-    "ctaTitle": "Mari Bagea' Sikek Bareng",
-    "ctaDesc": "Ade' project nang mri? Kula ingun lang ngartek. Mari collaborate mi ngerjakne idea kamu!",
-    "startProject": "Mulai Projectmu"
+    "startProject": "Mulai Proyek Anda",
+    // Experiences page
+    "expHeaderBadge": "Perjalanan Profesional",
+    "expHeaderDesc": "Timeline pengalaman dan latar belakang pendidikan saya, yang menunjukkan perjalanan saya di bidang teknologi dan pengembangan.",
+    "expWorkDesc": "Pengalaman Kerja",
+    "expEduDesc": "Pendidikan",
+    "skillsBadge": "Keahlian Inti",
+    "expSkillsTitle": "Apa yang Saya Kerjakan",
+    "expCtaTitle": "Mari Bekerja Sama",
+    "expCtaDesc": "Tertarik berkolaborasi dalam proyek Anda berikutnya? Saya dengan senang hati akan mendengar dari Anda.",
+    "ctaButton": "Hubungi Saya",
+    // Skills translations
+    "skillFullStack": "Pengembangan Full-Stack",
+    "skillNextJs": "Next.js",
+    "skillLaravel": "Laravel",
+    "skillSlicing": "Slicing HTML",
+    "skillDatabase": "Manajemen Database",
+    "skillApi": "Pengembangan API",
+    "skillArchitecture": "Arsitektur Sistem",
+    "skillLeadership": "Kerja Tim",
+    // Services page
+    "servicesBadge": "Layanan & Solusi",
+    "servicesHeaderDesc": "Layanan pengembangan profesional yang disesuaikan untuk menghidupkan ide digital Anda dengan teknologi mutakhir dan desain modern.",
+    "servicesCtaTitle": "Siapa yang Mau Memulai Proyek Anda?",
+    "servicesCtaDesc": "Mari berkolaborasi untuk menciptakan sesuatu yang luar biasa bersama",
+    "servicesCtaButton": "Hubungi Saya",
+    "servicesFeaturesBadge": "Mengapa Memilih Saya",
+    "servicesFeaturesTitle": "Apa yang Membedakan Saya",
+    "featureFastDelivery": "Pengiriman Cepat",
+    "featureFastDeliveryDesc": "Waktu penyelesaian yang cepat tanpa mengorbankan kualitas",
+    "featureResponsive": "Desain Responsif",
+    "featureResponsiveDesc": "Desain yang responsif dan ramah seluler untuk semua ukuran layar",
+    "featureConsulting": "Konsultasi & Dukungan",
+    "featureConsultingDesc": "Dukungan dan pemeliharaan berkelanjutan untuk ketenangan pikiran Anda",
+    // Portfolios page translations
+    "portfolioEmptyTitle": "Tidak ada portofolio tersedia",
+    "portfolioEmptyDesc": "Item portofolio akan ditampilkan di sini ketika tersedia.",
+    "loadingPortfolio": "Memuat proyek menarik...",
+    "viewLiveDemo": "Lihat Demo Langsung",
+    "demoNotAvailable": "Demo Tidak Tersedia",
+    "portfolioHeaderBadge": "Solusi Kreatif",
+    "portfolioHeaderDesc": "Jelajahi portofolio proyek digital saya, setiap dibuat dengan penuh semangat dan perhatian terhadap detail untuk memberikan pengalaman pengguna yang luar biasa.",
+    "portfolioStatsBadge": "Statistik Proyek",
+    "portfolioStatsTitle": "Rekam Jejak",
+    "statCompletedProjects": "Proyek Selesai",
+    "statClientSatisfaction": "Kepuasan Klien",
+    "statSupportAvailable": "Dukungan Tersedia",
+    "statYearsExperience": "Tahun Pengalaman",
+    "portfolioCtaTitle": "Punya Ide Proyek?",
+    "portfolioCtaDesc": "Mari berkolaborasi untuk mewujudkan visi Anda dengan teknologi mutakhir dan desain kreatif.",
+    "portfolioCtaButton": "Mulai Proyek Anda"
 }
 
 const arabicLang = {
@@ -693,8 +628,58 @@ const arabicLang = {
     "skillsTitle": "المهارات والتقنيات",
     "ctaTitle": "دعونا نبني شيئا رائعا معا",
     "ctaDesc": "هل لديك فكرة مشروع؟ أحب سماعها. دعونا نتعاون ونحقق أفكارك!",
-    "startProject": "ابدأ مشروعك"
+    "startProject": "ابدأ مشروعك",
+    // Experiences page
+    "expHeaderBadge": "المسار المهني",
+    "expHeaderDesc": "جدول زمني لتجربتي المهنية وتعليميي، يعرض رحلتي في مجال التكنولوجيا والتطوير.",
+    "expWorkDesc": "الخبرات العملية",
+    "expEduDesc": "التعليم",
+    "skillsBadge": "الكفاءات الأساسية",
+    "expSkillsTitle": "ماذا أفعل",
+    "expCtaTitle": "دعونا نعمل معًا",
+    "expCtaDesc": "هل تهتم بالتعاون في مشروعك القادم؟ يسعدني سماعك.",
+    "ctaButton": "تواصل معي",
+    // Skills translations
+    "skillFullStack": "Full-Stack Development",
+    "skillNextJs": "Next.js",
+    "skillLaravel": "Laravel",
+    "skillSlicing": "Slicing HTML",
+    "skillDatabase": "Database Management",
+    "skillApi": "API Development",
+    "skillArchitecture": "System Architecture",
+    "skillLeadership": "Team Work",
+    // Services page
+    "servicesBadge": "الخدمات والحلول",
+    "servicesHeaderDesc": "خدمات تطوير احترافية مصممة لجلب أفكارك الرقمية إلى الحياة مع التكنولوجيا المتطورة والتصميم الحديث.",
+    "servicesCtaTitle": "هل أنت مستعد لبدء مشروعك؟",
+    "servicesCtaDesc": "دعونا نتعاون لخلق شيء رائع معا",
+    "servicesCtaButton": "تواصل معي",
+    "servicesFeaturesBadge": "لماذا تختارني",
+    "servicesFeaturesTitle": "ما يميزني",
+    "featureFastDelivery": "توصيل سريع",
+    "featureFastDeliveryDesc": "أوقات تسليم سريعة دون المساس بالجودة",
+    "featureResponsive": "تصميم متجاوب",
+    "featureResponsiveDesc": "تصميم متجاوب وصديق للجوال لجميع أحجام الشاشات",
+    "featureConsulting": "استشارات ودعم",
+    "featureConsultingDesc": "دعم وصيانة مستمران لسلامتك النفسية",
+    // Portfolios page translations
+    "portfolioEmptyTitle": "لا توجد محافظ متاحة",
+    "portfolioEmptyDesc": "سيتم عرض عناصر المحفظة هنا عند توفرها.",
+    "loadingPortfolio": "جاري تحميل المشاريع الرائعة...",
+    "viewLiveDemo": "عرض التجربة المباشرة",
+    "demoNotAvailable": "التجربة غير متوفرة",
+    "portfolioHeaderBadge": "حلول إبداعية",
+    "portfolioHeaderDesc": "استكشف محفظة مشاريعي الرقمية، كل منها مصنوعة بشغف واهتمام بالتفاصيل لتقديم تجارب مستخدم استثنائية.",
+    "portfolioStatsBadge": "إحصائيات المشروع",
+    "portfolioStatsTitle": "سجل الإنجازات",
+    "statCompletedProjects": "المشاريع المكتملة",
+    "statClientSatisfaction": "رضا العملاء",
+    "statSupportAvailable": "الدعم متاح",
+    "statYearsExperience": "سنوات الخبرة",
+    "portfolioCtaTitle": "هل لديك فكرة مشروع؟",
+    "portfolioCtaDesc": "دعونا نتعاون لتحقيق رؤيتك بأحدث التقنيات والتصميم الإبداعي.",
+    "portfolioCtaButton": "ابدأ مشروعك"
 }
 
-export { arabicLang, data, indoLang, sasakLang };
+export { arabicLang, data, indoLang };
 
