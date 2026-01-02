@@ -15,6 +15,7 @@ interface FooterProps {
       footerTechReact?: string;
       footerBackToTop?: string;
     };
+    isDarkMode?: boolean;
   };
   convertLang?: (lang: string) => void;
 }
@@ -40,7 +41,7 @@ export default function Footer({ data }: FooterProps): JSX.Element {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <footer className={`bg-gradient-to-br ${data.isDarkMode ? 'from-gray-900 via-gray-800 to-gray-900 text-white' : 'from-white via-gray-50 to-gray-100 text-gray-800'}`}>
       {/* Main Footer Content */}
       <div className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -51,9 +52,9 @@ export default function Footer({ data }: FooterProps): JSX.Element {
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-3 shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300 group-hover:scale-105">
                   <span className="text-white font-bold text-xl">R</span>
                 </div>
-                <h3 className="text-2xl font-bold text-white">r'Fun</h3>
+                <h3 className={`text-2xl font-bold ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>r'Fun</h3>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className={`${data.isDarkMode ? 'text-gray-400' : 'text-gray-600'} leading-relaxed mb-6`}>
                 {t.brandDesc}
               </p>
               {/* Social Links */}

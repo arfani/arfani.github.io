@@ -6,7 +6,19 @@ interface ConvLangAction {
   dataLang?: any;
 }
 
-const rootRed = (state = data, action: ConvLangAction) => {
+interface ToggleDarkModeAction {
+  type: 'toggleDarkMode';
+}
+
+interface RootState {
+  name: { first: string; middle: string; last: string; };
+  links: { github: string; };
+  portfolios: { name: string; linkDemo: string; linkDownload: string; imgName: string; title: string; tech: string; faIcon: string; }[];
+  lang: any;
+  isDarkMode?: boolean;
+}
+
+const rootRed = (state: RootState = { ...data, isDarkMode: false }, action: ConvLangAction | ToggleDarkModeAction): RootState => {
   if (action.type === "convLang") {
     let newLang;
     switch (action.lang) {
@@ -32,30 +44,62 @@ const rootRed = (state = data, action: ConvLangAction) => {
 
     return { ...state, lang: newLang };
   }
+
+  if (action.type === "toggleDarkMode") {
+    // Toggle dark mode
+    const newDarkMode = !state.isDarkMode;
+
+    // Save dark mode preference to localStorage
+    try {
+      localStorage.setItem('preferredDarkMode', newDarkMode.toString());
+    } catch {
+      console.log('Could not save dark mode preference');
+    }
+
+    return { ...state, isDarkMode: newDarkMode };
+  }
+
   return state;
 };
 
 export default rootRed;
 
-// Helper function to get initial language from localStorage
-export const getInitialLang = () => {
+// Helper function to get initial state with saved preferences
+export const getInitialState = (): RootState => {
+  const initialState: RootState = { ...data, isDarkMode: false };
+
   try {
+    // Get saved language
     const savedLang = localStorage.getItem('preferredLang');
     if (savedLang) {
       switch (savedLang) {
         case "english":
-          return data.lang;
+          initialState.lang = data.lang;
+          break;
         case "indo":
-          return indoLang;
+          initialState.lang = indoLang;
+          break;
         case "arab":
-          return arabicLang;
+          initialState.lang = arabicLang;
+          break;
         default:
-          return data.lang;
+          initialState.lang = data.lang;
       }
     }
+
+    // Get saved dark mode
+    const savedDarkMode = localStorage.getItem('preferredDarkMode');
+    if (savedDarkMode !== null) {
+      initialState.isDarkMode = savedDarkMode === 'true';
+    } else {
+      // Check system preference by default
+      initialState.isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
   } catch {
-    console.log('Could not read language preference');
+    console.log('Could not read preferences');
+    initialState.isDarkMode = false;
   }
-  return data.lang;
+
+  return initialState;
 };
 

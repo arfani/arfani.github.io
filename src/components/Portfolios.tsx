@@ -51,16 +51,16 @@ export default function Portfolios({ data }: PortfoliosProps) {
 
   if (!data.portfolios || data.portfolios.length === 0) {
     return (
-      <div id="portfolios" className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50">
+      <div id="portfolios" className={`min-h-screen bg-gradient-to-br ${data.isDarkMode ? 'from-gray-900 via-gray-800 to-gray-900' : 'from-gray-50 via-purple-50 to-blue-50'}`}>
         <div className="pt-20 pb-16 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white rounded-3xl p-8 sm:p-16 shadow-xl">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="fa fa-folder-open text-4xl sm:text-5xl text-gray-400"></span>
+            <div className={`${data.isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-3xl p-8 sm:p-16 shadow-xl`}>
+              <div className={`w-20 h-20 sm:w-24 sm:h-24 ${data.isDarkMode ? 'bg-gray-700' : 'bg-gray-100'} rounded-full flex items-center justify-center mx-auto mb-6`}>
+                <span className={`fa fa-folder-open text-4xl sm:text-5xl ${data.isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}></span>
               </div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">{data.lang.menus[3]}</h1>
-              <h4 className="text-xl sm:text-2xl text-gray-600 mb-4">{data.lang.portfolioEmptyTitle}</h4>
-              <p className="text-lg text-gray-500">{data.lang.portfolioEmptyDesc}</p>
+              <h1 className={`text-3xl sm:text-4xl font-bold ${data.isDarkMode ? 'text-white' : 'text-gray-800'} mb-6`}>{data.lang.menus[3]}</h1>
+              <h4 className={`text-xl sm:text-2xl ${data.isDarkMode ? 'text-gray-300' : 'text-gray-600'} mb-4`}>{data.lang.portfolioEmptyTitle}</h4>
+              <p className={`text-lg ${data.isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{data.lang.portfolioEmptyDesc}</p>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function Portfolios({ data }: PortfoliosProps) {
 
   const Portfolio = data.portfolios?.map((item: PortfolioItem, i: number) => (
     <div key={i} className="group">
-      <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full relative overflow-hidden">
+      <div className={`${data.isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'} rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border h-full relative overflow-hidden`}>
         {/* Decorative gradient border on top */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -90,10 +90,10 @@ export default function Portfolios({ data }: PortfoliosProps) {
         {/* Content */}
         <div className="text-center">
           <h5
-            className="text-lg sm:text-xl font-bold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors duration-300 line-clamp-2"
+            className={`text-lg sm:text-xl font-bold mb-4 group-hover:text-purple-600 transition-colors duration-300 line-clamp-2 ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}
             dangerouslySetInnerHTML={{ __html: item.title }}
           ></h5>
-          <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className={`inline-flex items-center ${data.isDarkMode ? 'bg-gray-700 text-purple-300' : 'bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700'} px-4 py-2 rounded-full text-sm font-medium mb-6`}>
             <span className="fa fa-code mr-2"></span>
             {item.tech}
           </div>
@@ -114,7 +114,7 @@ export default function Portfolios({ data }: PortfoliosProps) {
           </div>
         ) : (
           <div className="mt-6">
-            <div className="w-full inline-flex items-center justify-center gap-2 bg-gray-100 text-gray-500 px-6 py-3 rounded-xl font-semibold cursor-not-allowed">
+            <div className={`w-full inline-flex items-center justify-center gap-2 ${data.isDarkMode ? 'bg-gray-700 text-gray-400' : 'bg-gray-100 text-gray-500'} px-6 py-3 rounded-xl font-semibold cursor-not-allowed`}>
               <span className="fa fa-lock text-lg"></span>
               <span>{data.lang.demoNotAvailable}</span>
             </div>
@@ -122,20 +122,20 @@ export default function Portfolios({ data }: PortfoliosProps) {
         )}
 
         {/* Hover overlay effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-pink-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
+        <div className={`absolute inset-0 bg-gradient-to-br from-purple-50/50 to-pink-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none ${data.isDarkMode ? 'dark:bg-purple-900/20' : ''}`}></div>
       </div>
     </div>
   ));
 
   if (isLoading) {
     return (
-      <div id="portfolios" className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50">
+      <div id="portfolios" className={`min-h-screen bg-gradient-to-br ${data.isDarkMode ? 'from-gray-900 via-gray-800 to-gray-900' : 'from-gray-50 via-purple-50 to-blue-50'}`}>
         <div className="pt-20 pb-16 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white rounded-3xl p-8 sm:p-16 shadow-xl">
+            <div className={`${data.isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-3xl p-8 sm:p-16 shadow-xl`}>
               <div className="w-16 h-16 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin mx-auto mb-6"></div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">{data.lang.menus[3]}</h1>
-              <p className="text-lg text-gray-600">{data.lang.loadingPortfolio}</p>
+              <h1 className={`text-3xl sm:text-4xl font-bold ${data.isDarkMode ? 'text-white' : 'text-gray-800'} mb-6`}>{data.lang.menus[3]}</h1>
+              <p className={`text-lg ${data.isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{data.lang.loadingPortfolio}</p>
             </div>
           </div>
         </div>
@@ -144,18 +144,18 @@ export default function Portfolios({ data }: PortfoliosProps) {
   }
 
   return (
-    <div id="portfolios" className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50">
+    <div id="portfolios" className={`min-h-screen bg-gradient-to-br ${data.isDarkMode ? 'from-gray-900 via-gray-800 to-gray-900' : 'from-gray-50 via-purple-50 to-blue-50'}`}>
       {/* Header Section */}
       <div className="pt-8 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <div className={`inline-flex items-center ${data.isDarkMode ? 'bg-purple-800/50 text-purple-200' : 'bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700'} px-4 py-2 rounded-full text-sm font-semibold mb-6`}>
             <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></span>
             {data.lang.portfolioHeaderBadge}
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+          <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>
             {data.lang.menus[3]}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${data.isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             {data.lang.portfolioHeaderDesc}
           </p>
         </div>
@@ -171,14 +171,14 @@ export default function Portfolios({ data }: PortfoliosProps) {
       </div>
 
       {/* Stats Section */}
-      <div className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className={`py-12 px-4 sm:px-6 lg:px-8 ${data.isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className={`inline-flex items-center ${data.isDarkMode ? 'bg-orange-800/50 text-orange-200' : 'bg-orange-100 text-orange-700'} px-4 py-2 rounded-full text-sm font-semibold mb-4`}>
               <span className="fa fa-chart-bar mr-2"></span>
               {data.lang.portfolioStatsBadge}
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">{data.lang.portfolioStatsTitle}</h2>
+            <h2 className={`text-2xl sm:text-3xl font-bold ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{data.lang.portfolioStatsTitle}</h2>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -190,13 +190,13 @@ export default function Portfolios({ data }: PortfoliosProps) {
             ].map((stat, index) => (
               <div
                 key={index}
-                className="group text-center p-4 sm:p-6 rounded-2xl bg-gray-50 hover:bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className={`group text-center p-4 sm:p-6 rounded-2xl ${data.isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-white'} shadow-lg hover:shadow-xl transition-all duration-300 border ${data.isDarkMode ? 'border-gray-600' : 'border-gray-100'}`}
               >
                 <div className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   <span className={`fa ${stat.icon} text-white text-xl`}></span>
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{stat.number}</div>
-                <p className="text-gray-600 font-medium text-sm">{stat.label}</p>
+                <div className={`text-2xl sm:text-3xl font-bold mb-2 ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{stat.number}</div>
+                <p className={`font-medium text-sm ${data.isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{stat.label}</p>
               </div>
             ))}
           </div>

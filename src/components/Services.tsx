@@ -39,18 +39,18 @@ export default function Services({ data }: ServicesProps) {
   ));
 
   return (
-    <div id="services" className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+    <div id="services" className={`min-h-screen bg-gradient-to-br ${data.isDarkMode ? 'from-gray-900 via-gray-800 to-gray-900' : 'from-gray-50 via-blue-50 to-purple-50'}`}>
       {/* Header Section */}
       <div className="pt-8 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <div className={`inline-flex items-center ${data.isDarkMode ? 'bg-blue-800/50 text-blue-200' : 'bg-blue-100 text-blue-700'} px-4 py-2 rounded-full text-sm font-semibold mb-6`}>
             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
             {data.lang.servicesBadge}
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+          <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>
             {data.lang.menus[2]}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${data.isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             {data.lang.servicesHeaderDesc}
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function Services({ data }: ServicesProps) {
       </div>
 
       {/* CTA Section */}
-      <div className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className={`py-12 px-4 sm:px-6 lg:px-8 ${data.isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <div className="max-w-4xl mx-auto text-center">
           <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-8 sm:p-12 text-white shadow-2xl overflow-hidden">
             {/* Decorative elements */}
@@ -99,11 +99,11 @@ export default function Services({ data }: ServicesProps) {
       <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className={`inline-flex items-center ${data.isDarkMode ? 'bg-green-800 text-green-200' : 'bg-green-100 text-green-700'} px-4 py-2 rounded-full text-sm font-semibold mb-4`}>
               <span className="fa fa-star mr-2"></span>
               {data.lang.servicesFeaturesBadge}
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">{data.lang.servicesFeaturesTitle}</h2>
+            <h2 className={`text-2xl sm:text-3xl font-bold ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{data.lang.servicesFeaturesTitle}</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
@@ -129,13 +129,13 @@ export default function Services({ data }: ServicesProps) {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="group text-center p-6 sm:p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className={`group text-center p-6 sm:p-8 rounded-2xl ${data.isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg hover:shadow-xl transition-all duration-300 border ${data.isDarkMode ? 'border-gray-700' : 'border-gray-100'}`}
               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   <span className={`fa ${feature.icon} text-white text-2xl`}></span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+                <h3 className={`text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors duration-300 ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{feature.title}</h3>
+                <p className={`leading-relaxed ${data.isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{feature.desc}</p>
               </div>
             ))}
           </div>

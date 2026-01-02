@@ -25,7 +25,7 @@ export default function Home({ data }: HomeProps) {
   const { name } = data
 
   return (
-    <div id="home" className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div id="home" className={`min-h-screen bg-gradient-to-br ${data.isDarkMode ? 'from-gray-900 via-gray-800 to-gray-900' : 'from-blue-50 via-white to-indigo-50'}`}>
       {/* Hero Section */}
       <div className="pt-8 lg:pt-12 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -61,13 +61,13 @@ export default function Home({ data }: HomeProps) {
             {/* Content */}
             <div className="order-1 lg:order-2 text-center lg:text-left">
               {/* Badge */}
-              <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <div className={`inline-flex items-center bg-gradient-to-r ${data.isDarkMode ? 'from-gray-700 to-gray-600 text-gray-200' : 'from-blue-100 to-indigo-100 text-blue-700'} px-4 py-2 rounded-full text-sm font-semibold mb-6`}>
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
                 {lang.webDeveloper}
               </div>
 
               {/* Name - Muhammad on first line, Arfan Hidayat on second line */}
-              <h1 id="name" className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-800 mb-4 leading-tight">
+              <h1 id="name" className={`text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-tight ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>
                 <div>{name.first}</div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                   {name.middle ? ` ${name.middle}` : ''}{name.last ? ` ${name.last}` : ''}
@@ -91,7 +91,7 @@ export default function Home({ data }: HomeProps) {
       {/* About Section - Enhanced */}
       <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-white rounded-3xl p-8 lg:p-12 shadow-xl overflow-hidden">
+          <div className={`relative ${data.isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-3xl p-8 lg:p-12 shadow-xl overflow-hidden`}>
             {/* Decorative gradient */}
             <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
 
@@ -104,8 +104,8 @@ export default function Home({ data }: HomeProps) {
                 <span className="fa fa-user text-white text-2xl"></span>
               </div>
 
-              <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">{lang.aboutTitle}</h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-8 text-center max-w-2xl mx-auto">
+              <h2 className={`text-3xl font-bold text-center mb-6 ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{lang.aboutTitle}</h2>
+              <p className={`text-lg leading-relaxed mb-8 text-center max-w-2xl mx-auto ${data.isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                 {lang.about}
               </p>
 
@@ -117,18 +117,18 @@ export default function Home({ data }: HomeProps) {
                   { icon: 'fa-mobile', label: lang.responsive, color: 'bg-purple-100 text-purple-600' },
                   { icon: 'fa-shield', label: lang.secure, color: 'bg-orange-100 text-orange-600' },
                 ].map((feature) => (
-                  <div key={feature.label} className="text-center p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
+                  <div key={feature.label} className={`text-center p-4 rounded-xl ${data.isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-gray-100'} transition-colors duration-300`}>
                     <div className={`w-12 h-12 ${feature.color} rounded-xl flex items-center justify-center mx-auto mb-2`}>
                       <span className={`fa ${feature.icon} text-xl`}></span>
                     </div>
-                    <p className="text-sm font-semibold text-gray-700">{feature.label}</p>
+                    <p className={`text-sm font-semibold ${data.isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>{feature.label}</p>
                   </div>
                 ))}
               </div>
 
               {/* Available badge */}
               <div className="flex justify-center mt-8">
-                <div className="text-sm inline-flex items-center bg-green-100 text-green-700 px-6 py-3 rounded-full font-semibold">
+                <div className={`text-sm inline-flex items-center ${data.isDarkMode ? 'bg-green-800 text-green-200' : 'bg-green-100 text-green-700'} px-6 py-3 rounded-full font-semibold`}>
                   <span className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></span>
                   {lang.availableFreelance}
                 </div>
@@ -139,14 +139,14 @@ export default function Home({ data }: HomeProps) {
       </div>
 
       {/* Skills Preview - Enhanced */}
-      <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className={`py-16 px-4 sm:px-6 lg:px-8 ${data.isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className={`inline-flex items-center ${data.isDarkMode ? 'bg-purple-800 text-purple-200' : 'bg-blue-100 text-blue-700'} px-4 py-2 rounded-full text-sm font-semibold mb-4`}>
               <span className="fa fa-star mr-2"></span>
               {lang.expertise}
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800">{lang.skillsTitle}</h2>
+            <h2 className={`text-3xl lg:text-4xl font-bold ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{lang.skillsTitle}</h2>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -160,7 +160,7 @@ export default function Home({ data }: HomeProps) {
             ].map((skill) => (
               <div
                 key={skill.name}
-                className="group text-center p-6 rounded-2xl bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100"
+                className={`group text-center p-6 rounded-2xl ${data.isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-white'} shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border ${data.isDarkMode ? 'border-gray-600' : 'border-gray-100'}`}
               >
                 <div className={`w-16 h-16 ${skill.bgClass} ${skill.textClass} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
                   {skill.icon === 'nextjs-icon' ? (
@@ -177,7 +177,7 @@ export default function Home({ data }: HomeProps) {
                     <img src="/icons/linux.svg" alt="Linux" className="w-8 h-8" />
                   )}
                 </div>
-                <p className="font-semibold text-gray-700 group-hover:text-blue-600 transition-colors duration-300">{skill.name}</p>
+                <p className={`font-semibold group-hover:text-blue-600 transition-colors duration-300 ${data.isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>{skill.name}</p>
               </div>
             ))}
           </div>

@@ -5,6 +5,12 @@ export const convLang = (lang: string) => {
   };
 };
 
+export const toggleDarkMode = () => {
+  return {
+    type: "toggleDarkMode",
+  };
+};
+
 // const convertLang = (lang, dataLang) => {
 //   return {
 //     type: "convLang",

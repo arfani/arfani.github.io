@@ -28,6 +28,7 @@ interface CertificatesProps {
       certCtaDesc: string;
       certCtaButton: string;
     };
+    isDarkMode?: boolean;
   };
 }
 
@@ -116,13 +117,13 @@ export default function Certificates(props: CertificatesProps) {
 
   if (loading) {
     return (
-      <div id="certificates" className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <div id="certificates" className={`min-h-screen bg-gradient-to-br ${props.data.isDarkMode ? 'from-gray-900 via-gray-800 to-gray-900' : 'from-blue-50 via-indigo-50 to-purple-50'}`}>
         <div className="pt-20 pb-16 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white rounded-3xl p-8 sm:p-16 shadow-xl">
+            <div className={`${props.data.isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-3xl p-8 sm:p-16 shadow-xl`}>
               <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-6"></div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">{props.data.lang.menus[5]}</h1>
-              <p className="text-lg text-gray-600">{props.data.lang.loadingCertificates}</p>
+              <h1 className={`text-3xl sm:text-4xl font-bold ${props.data.isDarkMode ? 'text-white' : 'text-gray-800'} mb-6`}>{props.data.lang.menus[5]}</h1>
+              <p className={`text-lg ${props.data.isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{props.data.lang.loadingCertificates}</p>
             </div>
           </div>
         </div>
@@ -131,18 +132,18 @@ export default function Certificates(props: CertificatesProps) {
   }
 
   return (
-    <div id="certificates" className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div id="certificates" className={`min-h-screen bg-gradient-to-br ${props.data.isDarkMode ? 'from-gray-900 via-gray-800 to-gray-900' : 'from-blue-50 via-indigo-50 to-purple-50'}`}>
       {/* Header Section */}
       <div className="pt-8 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <div className={`inline-flex items-center ${props.data.isDarkMode ? 'bg-blue-800/50 text-blue-200' : 'bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700'} px-4 py-2 rounded-full text-sm font-semibold mb-6`}>
             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
             {props.data.lang.certHeaderBadge}
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+          <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 ${props.data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>
             {props.data.lang.menus[5]}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${props.data.isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             {props.data.lang.certHeaderDesc}
           </p>
         </div>
@@ -152,51 +153,51 @@ export default function Certificates(props: CertificatesProps) {
       <div className="pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {certificates.length === 0 ? (
-            <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-xl text-center">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="fa fa-exclamation-triangle text-3xl sm:text-4xl text-red-500"></span>
+            <div className={`${props.data.isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl p-8 sm:p-12 shadow-xl text-center`}>
+              <div className={`w-20 h-20 sm:w-24 sm:h-24 ${props.data.isDarkMode ? 'bg-gray-700' : 'bg-red-100'} rounded-full flex items-center justify-center mx-auto mb-6`}>
+                <span className={`fa fa-exclamation-triangle text-3xl sm:text-4xl ${props.data.isDarkMode ? 'text-red-400' : 'text-red-500'}`}></span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-red-700 mb-4">{props.data.lang.certEmptyTitle}</h3>
-              <p className="text-lg text-gray-600 mb-2">{props.data.lang.certEmptyFound.replace('{count}', '0')}</p>
-              <p className="text-gray-500">{props.data.lang.certEmptyConsole}</p>
+              <h3 className={`text-2xl sm:text-3xl font-bold mb-4 ${props.data.isDarkMode ? 'text-red-400' : 'text-red-700'}`}>{props.data.lang.certEmptyTitle}</h3>
+              <p className={`text-lg mb-2 ${props.data.isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{props.data.lang.certEmptyFound.replace('{count}', '0')}</p>
+              <p className={props.data.isDarkMode ? 'text-gray-500' : 'text-gray-500'}>{props.data.lang.certEmptyConsole}</p>
             </div>
           ) : (
             <div>
               {/* Stats - Enhanced */}
-              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl mb-8">
+              <div className={`${props.data.isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl p-6 sm:p-8 shadow-xl mb-8`}>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-center">
-                  <div className="group p-4 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 transition-all duration-300">
+                  <div className={`group p-4 rounded-xl ${props.data.isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gradient-to-br from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100'} transition-all duration-300`}>
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <span className="fa fa-certificate text-white text-xl"></span>
                     </div>
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-800">{certificates.length}</div>
-                    <p className="text-gray-600 font-medium text-sm">{props.data.lang.statTotalCertificates}</p>
+                    <div className={`text-2xl sm:text-3xl font-bold ${props.data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{certificates.length}</div>
+                    <p className={`font-medium text-sm ${props.data.isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{props.data.lang.statTotalCertificates}</p>
                   </div>
-                  <div className="group p-4 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 transition-all duration-300">
+                  <div className={`group p-4 rounded-xl ${props.data.isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gradient-to-br from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100'} transition-all duration-300`}>
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <span className="fa fa-graduation-cap text-white text-xl"></span>
                     </div>
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-800">100%</div>
-                    <p className="text-gray-600 font-medium text-sm">{props.data.lang.statCompletionRate}</p>
+                    <div className={`text-2xl sm:text-3xl font-bold ${props.data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>100%</div>
+                    <p className={`font-medium text-sm ${props.data.isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{props.data.lang.statCompletionRate}</p>
                   </div>
-                  <div className="col-span-2 md:col-span-1 group p-4 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 transition-all duration-300">
+                  <div className={`col-span-2 md:col-span-1 group p-4 rounded-xl ${props.data.isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gradient-to-br from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100'} transition-all duration-300`}>
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <span className="fa fa-star text-white text-xl"></span>
                     </div>
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-800">{yearsLearning}+</div>
-                    <p className="text-gray-600 font-medium text-sm">{props.data.lang.statYearsLearning}</p>
+                    <div className={`text-2xl sm:text-3xl font-bold ${props.data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{yearsLearning}+</div>
+                    <p className={`font-medium text-sm ${props.data.isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{props.data.lang.statYearsLearning}</p>
                   </div>
                 </div>
               </div>
 
               {/* Touch-Friendly Certificate Viewer/Carousel */}
-              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl">
+              <div className={`${props.data.isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl p-6 sm:p-8 shadow-xl`}>
                 <div className="text-center mb-8">
                   <div className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mx-auto mb-4 shadow-lg">
                     <span className="fa fa-certificate text-white text-2xl"></span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{props.data.lang.certCarouselTitle}</h2>
-                  <p className="text-gray-600">{props.data.lang.certSwipeHint}</p>
+                  <h2 className={`text-2xl sm:text-3xl font-bold mb-2 ${props.data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{props.data.lang.certCarouselTitle}</h2>
+                  <p className={props.data.isDarkMode ? 'text-gray-400' : 'text-gray-600'}>{props.data.lang.certSwipeHint}</p>
                 </div>
 
                 {/* Touch-friendly carousel container */}
@@ -286,31 +287,31 @@ export default function Certificates(props: CertificatesProps) {
 
       {/* Achievement Highlights */}
       {certificates.length > 0 && (
-        <div className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className={`py-12 px-4 sm:px-6 lg:px-8 ${props.data.isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <div className={`inline-flex items-center ${props.data.isDarkMode ? 'bg-purple-800/50 text-purple-200' : 'bg-purple-100 text-purple-700'} px-4 py-2 rounded-full text-sm font-semibold mb-4`}>
                 <span className="fa fa-trophy mr-2"></span>
                 {props.data.lang.certHighlightsBadge}
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">{props.data.lang.certHighlightsTitle}</h2>
+              <h2 className={`text-2xl sm:text-3xl font-bold ${props.data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{props.data.lang.certHighlightsTitle}</h2>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
-                { category: props.data.lang.skillWebDev, icon: "fa-code", bgClass: "bg-blue-100", textClass: "text-blue-600" },
-                { category: props.data.lang.skillCloud, icon: "fa-cloud", bgClass: "bg-indigo-100", textClass: "text-indigo-600" },
-                { category: props.data.lang.skillMarketing, icon: "fa-bullhorn", bgClass: "bg-green-100", textClass: "text-green-600" },
-                { category: props.data.lang.skillProgramming, icon: "fa-cogs", bgClass: "bg-purple-100", textClass: "text-purple-600" }
+                { category: props.data.lang.skillWebDev, icon: "fa-code", bgClass: "bg-blue-100", textClass: "text-blue-600", darkBgClass: "bg-blue-900/50", darkTextClass: "text-blue-400" },
+                { category: props.data.lang.skillCloud, icon: "fa-cloud", bgClass: "bg-indigo-100", textClass: "text-indigo-600", darkBgClass: "bg-indigo-900/50", darkTextClass: "text-indigo-400" },
+                { category: props.data.lang.skillMarketing, icon: "fa-bullhorn", bgClass: "bg-green-100", textClass: "text-green-600", darkBgClass: "bg-green-900/50", darkTextClass: "text-green-400" },
+                { category: props.data.lang.skillProgramming, icon: "fa-cogs", bgClass: "bg-purple-100", textClass: "text-purple-600", darkBgClass: "bg-purple-900/50", darkTextClass: "text-purple-400" }
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="group text-center p-4 sm:p-6 rounded-2xl bg-gray-50 hover:bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-200"
+                  className={`group text-center p-4 sm:p-6 rounded-2xl ${props.data.isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-white'} shadow-lg hover:shadow-xl transition-all duration-300 border ${props.data.isDarkMode ? 'border-gray-600 hover:border-gray-500' : 'border-gray-100 hover:border-gray-200'}`}
                 >
-                  <div className={`w-14 h-14 ${item.bgClass} ${item.textClass} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
+                  <div className={`w-14 h-14 ${props.data.isDarkMode ? item.darkBgClass : item.bgClass} ${props.data.isDarkMode ? item.darkTextClass : item.textClass} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
                     <span className={`fa ${item.icon} text-xl sm:text-2xl`}></span>
                   </div>
-                  <p className="font-semibold text-gray-700 text-sm sm:text-base">{item.category}</p>
+                  <p className={`font-semibold text-sm sm:text-base ${props.data.isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>{item.category}</p>
                 </div>
               ))}
             </div>

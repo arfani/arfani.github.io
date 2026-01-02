@@ -260,10 +260,12 @@ const data = {
         "footerTechReact": "React.js",
         "footerBackToTop": "Back to top",
         // Language selector
-
         "langEnglish": "English",
         "langIndonesian": "Indonesia",
         "langArabic": "العربية",
+        // Dark mode labels
+        "darkModeLabel": "Dark Mode",
+        "lightModeLabel": "Light Mode",
         // Certificates page translations
         "loadingCertificates": "Loading professional certifications...",
         "certHeaderBadge": "Professional Achievements",
@@ -516,10 +518,12 @@ const indoLang = {
     "footerTechReact": "React.js",
     "footerBackToTop": "Kembali ke atas",
     // Language selector
-
     "langEnglish": "English",
     "langIndonesian": "Indonesia",
     "langArabic": "العربية",
+    // Dark mode labels
+    "darkModeLabel": "Mode Gelap",
+    "lightModeLabel": "Mode Terang",
     // Certificates page translations
     "loadingCertificates": "Memuat sertifikasi profesional...",
     "certHeaderBadge": "Pencapaian Profesional",
@@ -763,6 +767,9 @@ const arabicLang = {
     "langEnglish": "English",
     "langIndonesian": "Indonesia",
     "langArabic": "العربية",
+    // Dark mode labels
+    "darkModeLabel": "الوضع الداكن",
+    "lightModeLabel": "الوضع الفاتح",
     // Certificates page translations
     "loadingCertificates": "جاري تحميل الشهادات المهنية...",
     "certHeaderBadge": "الإنجازات المهنية",

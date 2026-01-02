@@ -13,20 +13,27 @@ interface RootData {
   links: any;
   name: any;
   portfolios: any[];
+  isDarkMode?: boolean;
 }
 
 interface MainProps {
   rootData: RootData;
   convertLang: (lang: string) => void;
+  toggleDarkMode: () => void;
 }
 
-export default function Main({ rootData, convertLang }: MainProps) {
+export default function Main({ rootData, convertLang, toggleDarkMode }: MainProps) {
   const location = useLocation();
 
   return (
     <Fragment>
-      <Navbar data={rootData} convertLang={convertLang} />
-      <div id="box" className='pt-20'>
+      <Navbar
+        data={rootData}
+        convertLang={convertLang}
+        toggleDarkMode={toggleDarkMode}
+        isDarkMode={rootData.isDarkMode}
+      />
+      <div id="box" className={`pt-20 min-h-screen ${rootData.isDarkMode ? 'dark bg-gray-900' : ''}`}>
         <Routes location={location} key={location.pathname}>
           <Route
             path="/"
@@ -48,7 +55,7 @@ export default function Main({ rootData, convertLang }: MainProps) {
             path="/certificates"
             element={<Certificates data={rootData} />}
           />
-          <Route path="*" element={<P404 />} />
+          <Route path="*" element={<P404 data={rootData} />} />
         </Routes>
       </div>
       <Footer data={rootData} />

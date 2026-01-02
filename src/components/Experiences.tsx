@@ -71,18 +71,18 @@ export default function Experiences({ data }: ExperiencesProps) {
   ));
 
   return (
-    <div id="exp" className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-green-50">
+    <div id="exp" className={`min-h-screen bg-gradient-to-br ${data.isDarkMode ? 'from-gray-900 via-gray-800 to-gray-900' : 'from-gray-50 via-blue-50 to-green-50'}`}>
       {/* Header Section */}
       <div className="pt-8 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <div className={`inline-flex items-center ${data.isDarkMode ? 'bg-purple-800 text-purple-200' : 'bg-purple-100 text-purple-700'} px-4 py-2 rounded-full text-sm font-semibold mb-6`}>
             <span className="fa fa-road mr-2"></span>
             {data.lang.expHeaderBadge}
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
+          <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>
             {data.lang.menus[1]}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className={`text-lg sm:text-xl max-w-2xl mx-auto ${data.isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             {data.lang.expHeaderDesc}
           </p>
         </div>
@@ -93,14 +93,14 @@ export default function Experiences({ data }: ExperiencesProps) {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Work Experience */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div className={`${data.isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl p-6 sm:p-8 shadow-xl`}>
               <div className="flex items-center mb-8">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
                   <span className="fa fa-briefcase text-white text-xl"></span>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-800">{data.lang.subtitleWork}</h2>
-                  <p className="text-gray-500 text-sm">{data.lang.expWorkDesc}</p>
+                  <h2 className={`text-2xl font-bold ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{data.lang.subtitleWork}</h2>
+                  <p className={`text-sm ${data.isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{data.lang.expWorkDesc}</p>
                 </div>
               </div>
               <div className="relative">
@@ -109,14 +109,14 @@ export default function Experiences({ data }: ExperiencesProps) {
             </div>
 
             {/* Education */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div className={`${data.isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-2xl p-6 sm:p-8 shadow-xl`}>
               <div className="flex items-center mb-8">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
                   <span className="fa fa-graduation-cap text-white text-xl"></span>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-800">{data.lang.subtitleEdu}</h2>
-                  <p className="text-gray-500 text-sm">{data.lang.expEduDesc}</p>
+                  <h2 className={`text-2xl font-bold ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{data.lang.subtitleEdu}</h2>
+                  <p className={`text-sm ${data.isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{data.lang.expEduDesc}</p>
                 </div>
               </div>
               <div className="relative">
@@ -128,14 +128,14 @@ export default function Experiences({ data }: ExperiencesProps) {
       </div>
 
       {/* Skills Summary Section - Enhanced */}
-      <div className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className={`py-12 px-4 sm:px-6 lg:px-8 ${data.isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className={`inline-flex items-center ${data.isDarkMode ? 'bg-orange-800 text-orange-200' : 'bg-orange-100 text-orange-700'} px-4 py-2 rounded-full text-sm font-semibold mb-4`}>
               <span className="fa fa-cogs mr-2"></span>
               {data.lang.skillsBadge}
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">{data.lang.expSkillsTitle}</h2>
+            <h2 className={`text-2xl sm:text-3xl font-bold ${data.isDarkMode ? 'text-white' : 'text-gray-800'}`}>{data.lang.expSkillsTitle}</h2>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -151,7 +151,7 @@ export default function Experiences({ data }: ExperiencesProps) {
             ].map((item, index) => (
               <div
                 key={index}
-                className="group text-center p-4 sm:p-6 rounded-2xl bg-gray-50 hover:bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-200"
+                className={`group text-center p-4 sm:p-6 rounded-2xl ${data.isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-white'} shadow-lg hover:shadow-xl transition-all duration-300 border ${data.isDarkMode ? 'border-gray-600 hover:border-gray-500' : 'border-gray-100 hover:border-gray-200'}`}
               >
                 <div className={`w-14 h-14 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {item.useFa ? (
@@ -164,7 +164,7 @@ export default function Experiences({ data }: ExperiencesProps) {
                     <img src={`/icons/${item.icon}`} alt={data.lang[item.skill as keyof typeof data.lang]} className="w-8 h-8" />
                   )}
                 </div>
-                <p className="font-semibold text-gray-700 text-sm">{data.lang[item.skill as keyof typeof data.lang]}</p>
+                <p className={`font-semibold text-sm ${data.isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>{data.lang[item.skill as keyof typeof data.lang]}</p>
               </div>
             ))}
           </div>
