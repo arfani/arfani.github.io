@@ -247,7 +247,31 @@ const data = {
         "statYearsExperience": "Years Experience",
         "portfolioCtaTitle": "Have a Project in Mind?",
         "portfolioCtaDesc": "Let's collaborate to bring your vision to life with cutting-edge technology and creative design.",
-        "portfolioCtaButton": "Start Your Project"
+        "portfolioCtaButton": "Start Your Project",
+        // Certificates page translations
+        "loadingCertificates": "Loading professional certifications...",
+        "certHeaderBadge": "Professional Achievements",
+        "certHeaderDesc": "My journey of continuous learning and professional development, showcasing various certifications and achievements.",
+        "certEmptyTitle": "No Certificates Found",
+        "certEmptyFound": "Found: {count} certificates",
+        "certEmptyConsole": "Check browser console for detailed loading information",
+        "statTotalCertificates": "Total Certificates",
+        "statCompletionRate": "Completion Rate",
+        "statYearsLearning": "Years Learning",
+        "certCarouselTitle": "Professional Certifications",
+        "certSwipeHint": "Swipe or use controls to navigate",
+        "btnPrevious": "Previous",
+        "btnNext": "Next",
+        "certMobileSwipeHint": "Swipe left or right to navigate",
+        "certHighlightsBadge": "Learning Journey",
+        "certHighlightsTitle": "Areas of Expertise",
+        "skillWebDev": "Web Development",
+        "skillCloud": "Cloud Computing",
+        "skillMarketing": "Digital Marketing",
+        "skillProgramming": "Programming",
+        "certCtaTitle": "Continuous Learning",
+        "certCtaDesc": "I believe in lifelong learning and staying updated with the latest technologies and best practices.",
+        "certCtaButton": "Let's Connect"
     }
 }
 
@@ -463,7 +487,31 @@ const indoLang = {
     "statYearsExperience": "Tahun Pengalaman",
     "portfolioCtaTitle": "Punya Ide Proyek?",
     "portfolioCtaDesc": "Mari berkolaborasi untuk mewujudkan visi Anda dengan teknologi mutakhir dan desain kreatif.",
-    "portfolioCtaButton": "Mulai Proyek Anda"
+    "portfolioCtaButton": "Mulai Proyek Anda",
+    // Certificates page translations
+    "loadingCertificates": "Memuat sertifikasi profesional...",
+    "certHeaderBadge": "Pencapaian Profesional",
+    "certHeaderDesc": "Perjalanan belajar dan pengembangan profesional saya, menampilkan berbagai sertifikasi dan pencapaian.",
+    "certEmptyTitle": "Tidak Ada Sertifikat",
+    "certEmptyFound": "Ditemukan: {count} sertifikat",
+    "certEmptyConsole": "Periksa konsol browser untuk informasi detail",
+    "statTotalCertificates": "Total Sertifikat",
+    "statCompletionRate": "Tingkat Penyelesaian",
+    "statYearsLearning": "Tahun Belajar",
+    "certCarouselTitle": "Sertifikasi Profesional",
+    "certSwipeHint": "Geser atau gunakan tombol navigasi",
+    "btnPrevious": "Sebelumnya",
+    "btnNext": "Selanjutnya",
+    "certMobileSwipeHint": "Geser kiri atau kanan untuk navigasi",
+    "certHighlightsBadge": "Perjalanan Belajar",
+    "certHighlightsTitle": "Bidang Keahlian",
+    "skillWebDev": "Pengembangan Web",
+    "skillCloud": "Komputasi Awan",
+    "skillMarketing": "Pemasaran Digital",
+    "skillProgramming": "Pemrograman",
+    "certCtaTitle": "Belajar Berkelanjutan",
+    "certCtaDesc": "Saya percaya pada pembelajaran seumur hidup dan tetap mengikuti teknologi dan praktik terbaik terbaru.",
+    "certCtaButton": "Hubungi Saya"
 }
 
 const arabicLang = {
@@ -678,7 +726,31 @@ const arabicLang = {
     "statYearsExperience": "سنوات الخبرة",
     "portfolioCtaTitle": "هل لديك فكرة مشروع؟",
     "portfolioCtaDesc": "دعونا نتعاون لتحقيق رؤيتك بأحدث التقنيات والتصميم الإبداعي.",
-    "portfolioCtaButton": "ابدأ مشروعك"
+    "portfolioCtaButton": "ابدأ مشروعك",
+    // Certificates page translations
+    "loadingCertificates": "جاري تحميل الشهادات المهنية...",
+    "certHeaderBadge": "الإنجازات المهنية",
+    "certHeaderDesc": "رحلة التطوير والتعلم المستمر، تعرض الشهادات والإنجازات المختلفة.",
+    "certEmptyTitle": "لم يتم العثور على شهادات",
+    "certEmptyFound": "تم العثور على: {count} شهادة",
+    "certEmptyConsole": "تحقق من وحدة التحكم للمعلومات التفصيلية",
+    "statTotalCertificates": "إجمالي الشهادات",
+    "statCompletionRate": "معدل الإنجاز",
+    "statYearsLearning": "سنوات التعلم",
+    "certCarouselTitle": "الشهادات المهنية",
+    "certSwipeHint": "اسحب أو استخدم عناصر التحكم للتنقل",
+    "btnPrevious": "السابق",
+    "btnNext": "التالي",
+    "certMobileSwipeHint": "اسحب يسارًا أو يمينًا للتنقل",
+    "certHighlightsBadge": "رحلة التعلم",
+    "certHighlightsTitle": "مجالات الخبرة",
+    "skillWebDev": "تطوير الويب",
+    "skillCloud": "الحوسبة السحابية",
+    "skillMarketing": "التسويق الرقمي",
+    "skillProgramming": "البرمجة",
+    "certCtaTitle": "التعلم المستمر",
+    "certCtaDesc": "أؤمن بالتعلم المستمر ومواكبة أحدث التقنيات وأفضل الممارسات.",
+    "certCtaButton": "تواصل معي"
 }
 
 export { arabicLang, data, indoLang };

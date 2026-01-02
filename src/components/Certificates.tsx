@@ -1,7 +1,34 @@
 import { useCallback, useEffect, useState } from "react";
 
 interface CertificatesProps {
-  data: any;
+  data: {
+    lang: {
+      menus: string[];
+      loadingCertificates: string;
+      certHeaderBadge: string;
+      certHeaderDesc: string;
+      certEmptyTitle: string;
+      certEmptyFound: string;
+      certEmptyConsole: string;
+      statTotalCertificates: string;
+      statCompletionRate: string;
+      statYearsLearning: string;
+      certCarouselTitle: string;
+      certSwipeHint: string;
+      btnPrevious: string;
+      btnNext: string;
+      certMobileSwipeHint: string;
+      certHighlightsBadge: string;
+      certHighlightsTitle: string;
+      skillWebDev: string;
+      skillCloud: string;
+      skillMarketing: string;
+      skillProgramming: string;
+      certCtaTitle: string;
+      certCtaDesc: string;
+      certCtaButton: string;
+    };
+  };
 }
 
 export default function Certificates(props: CertificatesProps) {
@@ -95,7 +122,7 @@ export default function Certificates(props: CertificatesProps) {
             <div className="bg-white rounded-3xl p-8 sm:p-16 shadow-xl">
               <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-6"></div>
               <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">{props.data.lang.menus[5]}</h1>
-              <p className="text-lg text-gray-600">Loading professional certifications...</p>
+              <p className="text-lg text-gray-600">{props.data.lang.loadingCertificates}</p>
             </div>
           </div>
         </div>
@@ -110,13 +137,13 @@ export default function Certificates(props: CertificatesProps) {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
-            Professional Achievements
+            {props.data.lang.certHeaderBadge}
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
             {props.data.lang.menus[5]}
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            My journey of continuous learning and professional development, showcasing various certifications and achievements.
+            {props.data.lang.certHeaderDesc}
           </p>
         </div>
       </div>
@@ -129,9 +156,9 @@ export default function Certificates(props: CertificatesProps) {
               <div className="w-20 h-20 sm:w-24 sm:h-24 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="fa fa-exclamation-triangle text-3xl sm:text-4xl text-red-500"></span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-red-700 mb-4">⚠️ No Certificates Found</h3>
-              <p className="text-lg text-gray-600 mb-2">Found: {certificates.length} certificates</p>
-              <p className="text-gray-500">Check browser console for detailed loading information</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-red-700 mb-4">{props.data.lang.certEmptyTitle}</h3>
+              <p className="text-lg text-gray-600 mb-2">{props.data.lang.certEmptyFound.replace('{count}', '0')}</p>
+              <p className="text-gray-500">{props.data.lang.certEmptyConsole}</p>
             </div>
           ) : (
             <div>
@@ -143,21 +170,21 @@ export default function Certificates(props: CertificatesProps) {
                       <span className="fa fa-certificate text-white text-xl"></span>
                     </div>
                     <div className="text-2xl sm:text-3xl font-bold text-gray-800">{certificates.length}</div>
-                    <p className="text-gray-600 font-medium text-sm">Total Certificates</p>
+                    <p className="text-gray-600 font-medium text-sm">{props.data.lang.statTotalCertificates}</p>
                   </div>
                   <div className="group p-4 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 transition-all duration-300">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <span className="fa fa-graduation-cap text-white text-xl"></span>
                     </div>
                     <div className="text-2xl sm:text-3xl font-bold text-gray-800">100%</div>
-                    <p className="text-gray-600 font-medium text-sm">Completion Rate</p>
+                    <p className="text-gray-600 font-medium text-sm">{props.data.lang.statCompletionRate}</p>
                   </div>
                   <div className="col-span-2 md:col-span-1 group p-4 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 transition-all duration-300">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <span className="fa fa-star text-white text-xl"></span>
                     </div>
                     <div className="text-2xl sm:text-3xl font-bold text-gray-800">{yearsLearning}+</div>
-                    <p className="text-gray-600 font-medium text-sm">Years Learning</p>
+                    <p className="text-gray-600 font-medium text-sm">{props.data.lang.statYearsLearning}</p>
                   </div>
                 </div>
               </div>
@@ -168,8 +195,8 @@ export default function Certificates(props: CertificatesProps) {
                   <div className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mx-auto mb-4 shadow-lg">
                     <span className="fa fa-certificate text-white text-2xl"></span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">Professional Certifications</h2>
-                  <p className="text-gray-600">Swipe or use controls to navigate</p>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{props.data.lang.certCarouselTitle}</h2>
+                  <p className="text-gray-600">{props.data.lang.certSwipeHint}</p>
                 </div>
 
                 {/* Touch-friendly carousel container */}
@@ -214,10 +241,10 @@ export default function Certificates(props: CertificatesProps) {
                     <button
                       onClick={prevSlide}
                       className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg active:scale-95 touch-manipulation"
-                      aria-label="Previous certificate"
+                      aria-label={props.data.lang.btnPrevious}
                     >
                       <span className="fa fa-chevron-left"></span>
-                      <span className="hidden sm:inline">Previous</span>
+                      <span className="hidden sm:inline">{props.data.lang.btnPrevious}</span>
                     </button>
 
                     {/* Dot indicators - Touch-friendly */}
@@ -238,9 +265,9 @@ export default function Certificates(props: CertificatesProps) {
                     <button
                       onClick={nextSlide}
                       className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg active:scale-95 touch-manipulation"
-                      aria-label="Next certificate"
+                      aria-label={props.data.lang.btnNext}
                     >
-                      <span className="hidden sm:inline">Next</span>
+                      <span className="hidden sm:inline">{props.data.lang.btnNext}</span>
                       <span className="fa fa-chevron-right"></span>
                     </button>
                   </div>
@@ -248,7 +275,7 @@ export default function Certificates(props: CertificatesProps) {
                   {/* Mobile swipe hint */}
                   <div className="mt-4 text-center text-gray-400 text-sm sm:hidden">
                     <span className="fa fa-hand-paper mr-2 animate-pulse"></span>
-                    Swipe left or right to navigate
+                    {props.data.lang.certMobileSwipeHint}
                   </div>
                 </div>
               </div>
@@ -264,17 +291,17 @@ export default function Certificates(props: CertificatesProps) {
             <div className="text-center mb-10">
               <div className="inline-flex items-center bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
                 <span className="fa fa-trophy mr-2"></span>
-                Learning Journey
+                {props.data.lang.certHighlightsBadge}
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Areas of Expertise</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">{props.data.lang.certHighlightsTitle}</h2>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
-                { category: "Web Development", icon: "fa-code", bgClass: "bg-blue-100", textClass: "text-blue-600" },
-                { category: "Cloud Computing", icon: "fa-cloud", bgClass: "bg-indigo-100", textClass: "text-indigo-600" },
-                { category: "Digital Marketing", icon: "fa-bullhorn", bgClass: "bg-green-100", textClass: "text-green-600" },
-                { category: "Programming", icon: "fa-cogs", bgClass: "bg-purple-100", textClass: "text-purple-600" }
+                { category: props.data.lang.skillWebDev, icon: "fa-code", bgClass: "bg-blue-100", textClass: "text-blue-600" },
+                { category: props.data.lang.skillCloud, icon: "fa-cloud", bgClass: "bg-indigo-100", textClass: "text-indigo-600" },
+                { category: props.data.lang.skillMarketing, icon: "fa-bullhorn", bgClass: "bg-green-100", textClass: "text-green-600" },
+                { category: props.data.lang.skillProgramming, icon: "fa-cogs", bgClass: "bg-purple-100", textClass: "text-purple-600" }
               ].map((item, index) => (
                 <div
                   key={index}
@@ -305,16 +332,16 @@ export default function Certificates(props: CertificatesProps) {
               <div className="flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur rounded-2xl mx-auto mb-6">
                 <span className="fa fa-graduation-cap text-white text-3xl"></span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Continuous Learning</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">{props.data.lang.certCtaTitle}</h2>
               <p className="text-lg sm:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                I believe in lifelong learning and staying updated with the latest technologies and best practices.
+                {props.data.lang.certCtaDesc}
               </p>
               <a
                 href="https://wa.me/6281907456710?text=Hi%20Arfan,%20I'm%20interested%20in%20your%20professional%20background"
                 className="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <span className="fa fa-comments text-lg"></span>
-                Let's Connect
+                {props.data.lang.certCtaButton}
               </a>
             </div>
           </div>
