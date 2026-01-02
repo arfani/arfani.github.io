@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import profileImage from "../assets/images/arfan.webp";
 
 interface HomeProps {
   data: any;
@@ -7,7 +8,7 @@ interface HomeProps {
 export default function Home({ data }: HomeProps) {
 
   const [linkWa, setLinkWa] = useState("https://web.whatsapp.com/send?phone=6281907456710&text=Hii%20Arfan,%20")
-  const pp = "/src/assets/images/arfan.webp"
+  const pp = profileImage
   const EXPERIENCE_START_YEAR = 2017 // First job started in Sep 2017
   const yearsExperience = new Date().getFullYear() - EXPERIENCE_START_YEAR
 
