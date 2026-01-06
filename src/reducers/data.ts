@@ -85,11 +85,6 @@ const data = {
                 "company": "BBPOM di Mataram"
             },
             {
-                "title": "Software Developer (Freelancer)",
-                "period": "Jul 2020 - 2022",
-                "company": "Suvvort.com"
-            },
-            {
                 "title": "Software Developer",
                 "period": "Sep 2017 - Jun 2020",
                 "company": "PT. Cahaya Braja Marketindo"
@@ -342,11 +337,6 @@ const indoLang = {
             "company": "BBPOM di Mataram"
         },
         {
-            "title": "Software Developer (Freelancer)",
-            "period": "Jul 2020 - 2022",
-            "company": "Suvvort.com"
-        },
-        {
             "title": "Software Developer",
             "period": "Sep 2017 - Jun 2020",
             "company": "PT. Cahaya Braja Marketindo"
@@ -596,12 +586,7 @@ const arabicLang = {
         {
             "title": "مطور برمجيات ودعم تقني",
             "period": "يناير 2021 - الآن",
-            "company": "BBPOM في ماتارام"
-        },
-        {
-            "title": "مطور برمجيات (عمل حر)",
-            "period": "يوليو 2020 - 2022",
-            "company": "Suvvort.com"
+            "company": "BBPOM di Mataram"
         },
         {
             "title": "مطور برمجيات",
