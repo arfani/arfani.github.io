@@ -2,28 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my-new-cv</title>
     <script>
         // SPA fallback for GitHub Pages
         // Store the original path in sessionStorage before React loads
         (function () {
-            var originalPath = window.location.pathname || '/';
+            var path = window.location.pathname;
             var search = window.location.search;
             var hash = window.location.hash;
-            if (search || hash) originalPath += search + hash;
-            sessionStorage.setItem('spa_fallback_path', originalPath);
+
+            // Store the full path including /my-new-cv prefix
+            // React Router basename will handle the prefix correctly
+            var fullPath = path;
+            if (search) fullPath += search;
+            if (hash) fullPath += hash;
+
+            // Store in sessionStorage for React to read
+            sessionStorage.setItem('spa_fallback_path', fullPath);
+
+            // Now redirect to index.html
+            window.location.href = '/my-new-cv/' + (path === '/my-new-cv/' ? '' : path.replace('/my-new-cv', '')) + (search || '') + (hash || '');
         })();
     </script>
 </head>
 
 <body>
-    <div id="root"></div>
+    <p>Loading...</p>
 </body>
 
 </html>
