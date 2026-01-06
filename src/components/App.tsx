@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { Route, BrowserRouter as Router, Routes, useLocation, useNavigate } from "react-router-dom";
@@ -26,16 +27,22 @@ function AppInner({ rootData, convertLang, toggleDarkMode }: AppProps) {
     // Only try to restore once on initial mount
     if (restoredRef.current) return;
 
-    const fallbackPath = sessionStorage.getItem('spa_fallback_path');
+    // Check window.SPA_FALLBACK_PATH set by index.html (faster than sessionStorage)
+    // @ts-ignore
+    const fallbackPath = window.SPA_FALLBACK_PATH || sessionStorage.getItem('spa_fallback_path');
+
     if (fallbackPath) {
       // Mark as restored to prevent multiple navigations
       restoredRef.current = true;
-      // Clear immediately
+      // Clear storage
       sessionStorage.removeItem('spa_fallback_path');
+      // @ts-ignore
+      delete window.SPA_FALLBACK_PATH;
       // Navigate to the original path
       navigate(fallbackPath, { replace: true });
     }
-  }, [navigate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Main
@@ -71,4 +78,5 @@ export default function App() {
     </Router>
   );
 }
+
 
