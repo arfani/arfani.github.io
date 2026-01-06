@@ -13,20 +13,17 @@
             var search = window.location.search;
             var hash = window.location.hash;
 
-            // Store the full path
-            var fullPath = path;
-            if (search) fullPath += search;
-            if (hash) fullPath += hash;
+            // Store the full path (without trailing slash for consistency)
+            var cleanPath = path === '/' ? '/' : path.replace(/\/$/, '');
+            if (search) cleanPath += search;
+            if (hash) cleanPath += hash;
 
             // Store in sessionStorage for React to read
-            sessionStorage.setItem('spa_fallback_path', fullPath);
+            sessionStorage.setItem('spa_fallback_path', cleanPath);
 
-            // Now redirect to index.html
-            if (path === '/' || path === '/index.html') {
-                window.location.reload();
-            } else {
-                window.location.href = '/' + (path === '/' ? '' : path.replace('/', '')) + (search || '') + (hash || '');
-            }
+            // Redirect to root - React will handle the routing
+            // Use replace() to avoid adding to browser history
+            window.location.replace('/');
         })();
     </script>
 </head>
